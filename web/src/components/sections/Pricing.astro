@@ -1,0 +1,218 @@
+---
+// Pricing section component
+interface PricingTier {
+  name: string;
+  price: string;
+  period: string;
+  description: string;
+  features: string[];
+  cta: {
+    text: string;
+    url: string;
+  };
+  highlighted?: boolean;
+}
+
+interface Props {
+  tiers: PricingTier[];
+  headline?: string;
+  subheadline?: string;
+}
+
+const {
+  tiers = [],
+  headline = 'Simple, Transparent Pricing',
+  subheadline = 'Choose the plan that works for you',
+} = Astro.props;
+---
+
+<section class="pricing">
+  <div class="container">
+    <div class="pricing__header">
+      <h2 class="pricing__headline">{headline}</h2>
+      {subheadline && <p class="pricing__subheadline">{subheadline}</p>}
+    </div>
+
+    <div class="pricing__grid">
+      {
+        tiers.map((tier) => (
+          <div class:list={['pricing__card', { 'pricing__card--highlighted': tier.highlighted }]}>
+            {tier.highlighted && <div class="pricing__badge">Popular</div>}
+
+            <h3 class="pricing__tier-name">{tier.name}</h3>
+            <p class="pricing__description">{tier.description}</p>
+
+            <div class="pricing__price-wrapper">
+              <span class="pricing__price">{tier.price}</span>
+              <span class="pricing__period">/{tier.period}</span>
+            </div>
+
+            <ul class="pricing__features">
+              {tier.features.map((feature) => (
+                <li class="pricing__feature">
+                  <span class="pricing__feature-icon">✓</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            <a href={tier.cta.url} class="pricing__cta">
+              {tier.cta.text}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing {
+    background: #fafafa;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .pricing__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-3xl);
+  }
+
+  .pricing__headline {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-md);
+  }
+
+  .pricing__subheadline {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    margin: 0;
+  }
+
+  .pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-2xl);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pricing__card {
+    background: white;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: all var(--transition-base);
+  }
+
+  .pricing__card:hover {
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .pricing__card--highlighted {
+    border-color: var(--color-text-dark);
+    border-width: 2px;
+  }
+
+  .pricing__badge {
+    position: absolute;
+    top: -12px;
+    right: var(--space-xl);
+    background: var(--color-text-dark);
+    color: white;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .pricing__tier-name {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-xs);
+  }
+
+  .pricing__description {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .pricing__price-wrapper {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .pricing__price {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .pricing__period {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+  }
+
+  .pricing__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-2xl) 0;
+    flex: 1;
+  }
+
+  .pricing__feature {
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    padding: var(--space-sm) 0;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .pricing__feature-icon {
+    color: var(--color-text-dark);
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+  }
+
+  .pricing__cta {
+    background: var(--color-text-dark);
+    color: white;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .pricing__cta:hover {
+    background: var(--color-text);
+    transform: translateY(-1px);
+  }
+
+  .pricing__card--highlighted .pricing__cta {
+    background: var(--color-text-dark);
+  }
+
+  @media (max-width: 768px) {
+    .pricing__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing__headline {
+      font-size: var(--font-size-2xl);
+    }
+  }
+</style>

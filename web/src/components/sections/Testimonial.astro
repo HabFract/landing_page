@@ -1,0 +1,107 @@
+---
+// Testimonial section with background image
+interface Props {
+  logo: string;
+  quote: string;
+  ctaText: string;
+  ctaUrl: string;
+  author: string;
+  position: string;
+  backgroundImage?: string;
+}
+
+const { logo, quote, ctaText, ctaUrl, author, position, backgroundImage } = Astro.props;
+---
+
+<section class="testimonial" style={backgroundImage ? `background-image: url('${backgroundImage}')` : ''}>
+  <div class="testimonial__overlay"></div>
+  <div class="container">
+    <div class="testimonial__content">
+      <div class="testimonial__logo">{logo}</div>
+      <blockquote class="testimonial__quote">"{quote}"</blockquote>
+      <a href={ctaUrl} class="testimonial__cta">{ctaText}</a>
+      <div class="testimonial__author">
+        <div class="testimonial__author-name">{author}</div>
+        <div class="testimonial__author-position">{position}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: var(--space-4xl) 0;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+  }
+
+  .testimonial__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  }
+
+  .testimonial__content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+  }
+
+  .testimonial__logo {
+    color: white;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-lg);
+  }
+
+  .testimonial__quote {
+    color: white;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-relaxed);
+    margin: 0 0 var(--space-xl) 0;
+  }
+
+  .testimonial__cta {
+    display: inline-block;
+    background: white;
+    color: var(--color-text-dark);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .testimonial__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .testimonial__author {
+    color: white;
+  }
+
+  .testimonial__author-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-xs);
+  }
+
+  .testimonial__author-position {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial__quote {
+      font-size: var(--font-size-lg);
+    }
+  }
+</style>

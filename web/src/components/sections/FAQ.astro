@@ -1,0 +1,152 @@
+---
+// FAQ section with interactive accordion
+import FAQAccordion from '../ui/FAQAccordion';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+  headline?: string;
+  subheadline?: string;
+}
+
+const {
+  items = [],
+  headline = 'Frequently Asked Questions',
+  subheadline = 'Find answers to common questions',
+} = Astro.props;
+---
+
+<section class="faq">
+  <div class="container">
+    <div class="faq__header">
+      <h2 class="faq__headline">{headline}</h2>
+      {subheadline && <p class="faq__subheadline">{subheadline}</p>}
+    </div>
+
+    <div class="faq__content">
+      <FAQAccordion items={items} client:load />
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background: white;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .faq__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-3xl);
+  }
+
+  .faq__headline {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-md);
+  }
+
+  .faq__subheadline {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    margin: 0;
+  }
+
+  .faq__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* FAQ Accordion Styles */
+  :global(.faq-accordion) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  :global(.faq-accordion__item) {
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: white;
+  }
+
+  :global(.faq-accordion__question) {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-lg) var(--space-xl);
+    background: white;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background var(--transition-fast);
+  }
+
+  :global(.faq-accordion__question:hover) {
+    background: #fafafa;
+  }
+
+  :global(.faq-accordion__question:focus-visible) {
+    outline: 2px solid var(--color-text-dark);
+    outline-offset: -2px;
+  }
+
+  :global(.faq-accordion__question-text) {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    flex: 1;
+  }
+
+  :global(.faq-accordion__icon) {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    transition: transform var(--transition-base);
+    flex-shrink: 0;
+    margin-left: var(--space-md);
+  }
+
+  :global(.faq-accordion__icon--open) {
+    transform: rotate(180deg);
+  }
+
+  :global(.faq-accordion__answer) {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-slow);
+  }
+
+  :global(.faq-accordion__answer--open) {
+    max-height: 500px;
+  }
+
+  :global(.faq-accordion__answer-content) {
+    padding: 0 var(--space-xl) var(--space-lg);
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+  }
+
+  @media (max-width: 768px) {
+    .faq__headline {
+      font-size: var(--font-size-2xl);
+    }
+
+    :global(.faq-accordion__question) {
+      padding: var(--space-md) var(--space-lg);
+    }
+
+    :global(.faq-accordion__question-text) {
+      font-size: var(--font-size-base);
+    }
+  }
+</style>

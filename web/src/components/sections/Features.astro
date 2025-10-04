@@ -1,0 +1,301 @@
+---
+// Features section matching section4.png design
+interface FeatureItem {
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface IntegrationLogos {
+  headline: string;
+  description: string;
+  ctaText: string;
+  ctaUrl: string;
+  logos: string[];
+}
+
+interface ProductCard {
+  icon: string;
+  iconColor: string;
+  title: string;
+  description: string;
+  ctaText: string;
+  ctaUrl: string;
+}
+
+interface Props {
+  headline: string;
+  items: FeatureItem[];
+  integrations?: IntegrationLogos;
+  products?: {
+    headline: string;
+    items: ProductCard[];
+  };
+}
+
+const { headline, items, integrations, products } = Astro.props;
+---
+
+<section class="features">
+  <div class="container">
+    <!-- Main Features Grid -->
+    <h2 class="features__headline">{headline}</h2>
+    <div class="features__grid">
+      {
+        items.map((item) => (
+          <div class="features__card">
+            <div class="features__image">
+              <img src={item.image} alt={item.title} />
+            </div>
+            <h3 class="features__title">{item.title}</h3>
+            <p class="features__description">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Integrations Section -->
+    {
+      integrations && (
+        <div class="integrations">
+          <div class="integrations__tag">▸ Integrations</div>
+          <h2 class="integrations__headline">{integrations.headline}</h2>
+          <p class="integrations__description">{integrations.description}</p>
+          <a href={integrations.ctaUrl} class="integrations__cta">
+            {integrations.ctaText} →
+          </a>
+
+          <div class="integrations__logos">
+            {integrations.logos.map((logo) => (
+              <div class="integrations__logo">{logo}</div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Products Section -->
+    {
+      products && (
+        <div class="products">
+          <h2 class="products__headline">{products.headline}</h2>
+          <div class="products__grid">
+            {products.items.map((product) => (
+              <a href={product.ctaUrl} class="products__card">
+                <div
+                  class="products__icon"
+                  style={`background-color: ${product.iconColor}`}
+                >
+                  {product.icon}
+                </div>
+                <h3 class="products__title">
+                  {product.title} {product.ctaText}
+                </h3>
+                <p class="products__description">{product.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .features {
+    background: #0a0a0a;
+    color: white;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .features__headline {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--space-3xl);
+    max-width: 600px;
+  }
+
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-4xl);
+  }
+
+  .features__card {
+    background: #1a1a1a;
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+  }
+
+  .features__card:hover {
+    background: #222;
+    transform: translateY(-4px);
+  }
+
+  .features__image {
+    margin-bottom: var(--space-md);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #2a2a2a;
+  }
+
+  .features__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .features__title {
+    color: white;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-xs);
+  }
+
+  .features__description {
+    color: #999;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  /* Integrations */
+  .integrations {
+    margin-top: var(--space-4xl);
+    padding-top: var(--space-4xl);
+    border-top: 1px solid #333;
+  }
+
+  .integrations__tag {
+    color: #666;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .integrations__headline {
+    color: white;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--space-lg);
+    max-width: 800px;
+  }
+
+  .integrations__description {
+    color: #999;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-xl);
+    max-width: 900px;
+  }
+
+  .integrations__cta {
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: var(--space-3xl);
+    transition: opacity var(--transition-fast);
+  }
+
+  .integrations__cta:hover {
+    opacity: 0.7;
+  }
+
+  .integrations__logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: var(--space-lg);
+    max-width: 800px;
+  }
+
+  .integrations__logo {
+    background: #1a1a1a;
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-sm);
+    color: #666;
+    aspect-ratio: 1;
+  }
+
+  /* Products */
+  .products {
+    margin-top: var(--space-4xl);
+    padding-top: var(--space-4xl);
+  }
+
+  .products__headline {
+    color: white;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .products__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .products__card {
+    background: #1a1a1a;
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    text-decoration: none;
+    display: block;
+    transition: all var(--transition-base);
+  }
+
+  .products__card:hover {
+    background: #222;
+    transform: translateY(-4px);
+  }
+
+  .products__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: white;
+    margin-bottom: var(--space-md);
+  }
+
+  .products__title {
+    color: white;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-sm);
+  }
+
+  .products__description {
+    color: #999;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .features__grid,
+    .products__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .integrations__logos {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

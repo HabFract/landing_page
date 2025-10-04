@@ -1,0 +1,133 @@
+---
+// Navigation component matching section1.png design
+---
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__wrapper">
+      <div class="nav__logo">
+        <img src="/logos/3.png" alt="Logo" class="nav__logo-image" />
+      </div>
+
+      <ul class="nav__menu">
+        <li class="nav__menu-item">
+          <a href="#products">Products</a>
+        </li>
+        <li class="nav__menu-item">
+          <a href="#pricing">Pricing</a>
+        </li>
+        <li class="nav__menu-item">
+          <a href="#docs">Docs</a>
+        </li>
+        <li class="nav__menu-item">
+          <a href="#customers">Customers</a>
+        </li>
+        <li class="nav__menu-item">
+          <a href="#resources">Resources</a>
+        </li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="#login" class="nav__link">Login</a>
+        <a href="#signup" class="nav__link">Sign-up</a>
+        <a href="#demo" class="nav__button">Book demo</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav {
+    background: white;
+    border-bottom: 1px solid var(--color-border-light);
+    padding: var(--space-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+  }
+
+  .nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2xl);
+  }
+
+  .nav__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__logo-image {
+    height: 48px;
+    width: auto;
+  }
+
+  .nav__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav__menu-item a {
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .nav__menu-item a:hover {
+    color: var(--color-text-dark);
+  }
+
+  .nav__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .nav__link {
+    color: var(--color-text);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .nav__link:hover {
+    color: var(--color-text-dark);
+  }
+
+  .nav__button {
+    background: var(--color-text-dark);
+    color: white;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-decoration: none;
+    transition: background var(--transition-fast);
+  }
+
+  .nav__button:hover {
+    background: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    .nav__menu {
+      display: none;
+    }
+
+    .nav__actions {
+      gap: var(--space-md);
+    }
+
+    .nav__link:first-child {
+      display: none;
+    }
+  }
+</style>

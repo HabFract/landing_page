@@ -1,44 +1,165 @@
 {
   "hero": {
-    "headline": "Transform Your Business with Innovation",
-    "subheadline": "Discover cutting-edge solutions that drive growth, efficiency, and success for modern enterprises.",
+    "tagline": "Your engine for smarter billing and growth",
+    "headline": "Automation With Oversight",
+    "subheadline": "",
     "cta": {
-      "text": "Request a Demo",
-      "url": "#contact"
-    }
+      "primary": {
+        "text": "Try for free",
+        "url": "#signup"
+      },
+      "secondary": {
+        "text": "Book a demo",
+        "url": "#demo"
+      }
+    },
+    "features": [
+      {
+        "icon": "📊",
+        "title": "CPQ",
+        "description": "The fastest way to go from quote to signed contract"
+      },
+      {
+        "icon": "💳",
+        "title": "Billing",
+        "description": "Flexible plans and subscriptions built for scale"
+      },
+      {
+        "icon": "📈",
+        "title": "Usage-based",
+        "description": "From usage to revenue, fully automated in real-time"
+      },
+      {
+        "icon": "💰",
+        "title": "Payments",
+        "description": "Coming this summer"
+      }
+    ],
+    "screenshot": "",
+    "bottomTagline": "Powering revenue growth for the next generation",
+    "logos": [
+      { "name": "Gladia" },
+      { "name": "ScorePlay" },
+      { "name": "Defunkt" },
+      { "name": "qobra" },
+      { "name": "lemlist" },
+      { "name": "Deer Analytics" },
+      { "name": "Formance" },
+      { "name": "MaiPal" },
+      { "name": "INFINIT" },
+      { "name": "yousign" },
+      { "name": "ecus" },
+      { "name": "swapcard" }
+    ]
   },
-  "features": [
-    {
-      "icon": "⚡",
-      "title": "Lightning Fast",
-      "description": "Experience blazing-fast performance that keeps your team productive and your customers happy."
-    },
-    {
-      "icon": "🔒",
-      "title": "Secure & Reliable",
-      "description": "Enterprise-grade security with 99.9% uptime SLA to keep your data safe and accessible."
-    },
-    {
-      "icon": "📊",
-      "title": "Data-Driven Insights",
-      "description": "Make informed decisions with powerful analytics and real-time reporting dashboards."
-    },
-    {
-      "icon": "🚀",
-      "title": "Easy Integration",
-      "description": "Seamlessly connect with your existing tools and workflows in minutes, not months."
-    },
-    {
-      "icon": "🎯",
-      "title": "Customizable",
-      "description": "Tailor every aspect to your unique needs with flexible configuration options."
-    },
-    {
-      "icon": "💬",
-      "title": "24/7 Support",
-      "description": "Get expert help whenever you need it with our dedicated customer success team."
-    }
-  ],
+  "testimonial": {
+    "logo": "MaiÜu",
+    "quote": "We used to have a weekly billing review with my finance team; but Hyperline made it totally useless",
+    "ctaText": "Get a product tour",
+    "ctaUrl": "#demo",
+    "author": "Martin Hellburg",
+    "position": "RevOps @MaiÜu",
+    "backgroundImage": "/designs/section4.png"
+  },
+  "features": {
+    "headline": "Everything that actually matters, built in",
+    "items": [
+      {
+        "title": "Automated integrations",
+        "description": "Migrate in minutes with zero engineering",
+        "image": "/placeholder-integration.png"
+      },
+      {
+        "title": "Real-time support",
+        "description": "Experts answer your questions in < 10 min",
+        "image": "/placeholder-support.png"
+      },
+      {
+        "title": "Global by design",
+        "description": "Invoice and be compliant in 100+ countries",
+        "image": "/placeholder-global.png"
+      },
+      {
+        "title": "Built-in compliance",
+        "description": "Certified e-invoicing ready in 60+ countries",
+        "image": "/placeholder-compliance.png"
+      },
+      {
+        "title": "World class infrastructure",
+        "description": "99.997% uptime across all environments",
+        "image": "/placeholder-infrastructure.png"
+      },
+      {
+        "title": "Enterprise-grade security",
+        "description": "SOC2, ISO27001, and GDPR certified",
+        "image": "/placeholder-security.png"
+      }
+    ]
+  },
+  "integrations": {
+    "headline": "Keep all your tools in sync with one source of truth",
+    "description": "Connect billing to the tools your team already relies on: CRMs, ERPs, payment providers, analytics platforms, data warehouses and more. Hyperline keeps everything in sync — automated, accurate, and always up to date.",
+    "ctaText": "Discover integrations",
+    "ctaUrl": "#integrations",
+    "logos": [
+      "Figma",
+      "Index",
+      "QuickBooks",
+      "Xero",
+      "Clockify",
+      "Arrows",
+      "Anrok",
+      "Lemon Squeezy",
+      "NetSuite",
+      "Stripe",
+      "M",
+      "Salesforce",
+      "HubSpot",
+      "PostgreSQL",
+      "Mailchimp",
+      "Snowflake",
+      "PostgreSQL",
+      "Arrows",
+      "Mint"
+    ]
+  },
+  "products": {
+    "headline": "Modular tools for your entire revenue journey",
+    "items": [
+      {
+        "icon": "€",
+        "iconColor": "#14B8A6",
+        "title": "CPQ",
+        "description": "The fastest way to from quote to signed contract",
+        "ctaText": "→",
+        "ctaUrl": "#cpq"
+      },
+      {
+        "icon": "»",
+        "iconColor": "#3B82F6",
+        "title": "Billing",
+        "description": "Flexible plans and billing flows, built for scale",
+        "ctaText": "→",
+        "ctaUrl": "#billing"
+      },
+      {
+        "icon": "⚡",
+        "iconColor": "#8B5CF6",
+        "title": "Usage-based",
+        "description": "From usage to revenue, fully automated in real-time",
+        "ctaText": "→",
+        "ctaUrl": "#usage"
+      },
+      {
+        "icon": "⊞",
+        "iconColor": "#F97316",
+        "title": "Payments",
+        "description": "New payment module available this summer",
+        "ctaText": "→",
+        "ctaUrl": "#payments"
+      }
+    ]
+  },
   "pricing": {
     "tiers": [
       {

@@ -1,0 +1,176 @@
+---
+// Contact section with form
+import ContactForm from '../ui/ContactForm';
+
+interface Props {
+  headline: string;
+  subheadline: string;
+  form: {
+    nameLabel: string;
+    namePlaceholder: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    messageLabel: string;
+    messagePlaceholder: string;
+    submitText: string;
+    successMessage: string;
+    errorMessage: string;
+  };
+}
+
+const {
+  headline = 'Get in Touch',
+  subheadline = "Have questions? We'd love to hear from you.",
+  form,
+} = Astro.props;
+---
+
+<section class="contact">
+  <div class="container">
+    <div class="contact__header">
+      <h2 class="contact__headline">{headline}</h2>
+      {subheadline && <p class="contact__subheadline">{subheadline}</p>}
+    </div>
+
+    <div class="contact__content">
+      <ContactForm {...form} client:load />
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: #fafafa;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .contact__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--space-3xl);
+  }
+
+  .contact__headline {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-md);
+  }
+
+  .contact__subheadline {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    margin: 0;
+  }
+
+  .contact__content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Contact Form Styles */
+  :global(.contact-form) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    background: white;
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  :global(.contact-form__field) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  :global(.contact-form__label) {
+    color: var(--color-text-dark);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  :global(.contact-form__input),
+  :global(.contact-form__textarea) {
+    width: 100%;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    transition: border-color var(--transition-fast);
+  }
+
+  :global(.contact-form__input:focus),
+  :global(.contact-form__textarea:focus) {
+    outline: none;
+    border-color: var(--color-text-dark);
+  }
+
+  :global(.contact-form__input--error) {
+    border-color: #dc2626;
+  }
+
+  :global(.contact-form__textarea) {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  :global(.contact-form__error) {
+    color: #dc2626;
+    font-size: var(--font-size-sm);
+  }
+
+  :global(.contact-form__submit) {
+    background: var(--color-text-dark);
+    color: white;
+    padding: var(--space-md) var(--space-xl);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+  }
+
+  :global(.contact-form__submit:hover:not(:disabled)) {
+    background: var(--color-text);
+    transform: translateY(-1px);
+  }
+
+  :global(.contact-form__submit:disabled) {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  :global(.contact-form__message) {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+
+  :global(.contact-form__message--success) {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+
+  :global(.contact-form__message--error) {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+
+  @media (max-width: 768px) {
+    .contact__headline {
+      font-size: var(--font-size-2xl);
+    }
+
+    :global(.contact-form) {
+      padding: var(--space-xl);
+    }
+  }
+</style>
