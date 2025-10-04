@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "headline": "Transform Your Business with Innovation",
+    "subheadline": "Discover cutting-edge solutions that drive growth, efficiency, and success for modern enterprises.",
+    "cta": {
+      "text": "Request a Demo",
+      "url": "#contact"
+    }
+  },
+  "features": [
+    {
+      "icon": "⚡",
+      "title": "Lightning Fast",
+      "description": "Experience blazing-fast performance that keeps your team productive and your customers happy."
+    },
+    {
+      "icon": "🔒",
+      "title": "Secure & Reliable",
+      "description": "Enterprise-grade security with 99.9% uptime SLA to keep your data safe and accessible."
+    },
+    {
+      "icon": "📊",
+      "title": "Data-Driven Insights",
+      "description": "Make informed decisions with powerful analytics and real-time reporting dashboards."
+    },
+    {
+      "icon": "🚀",
+      "title": "Easy Integration",
+      "description": "Seamlessly connect with your existing tools and workflows in minutes, not months."
+    },
+    {
+      "icon": "🎯",
+      "title": "Customizable",
+      "description": "Tailor every aspect to your unique needs with flexible configuration options."
+    },
+    {
+      "icon": "💬",
+      "title": "24/7 Support",
+      "description": "Get expert help whenever you need it with our dedicated customer success team."
+    }
+  ],
+  "pricing": {
+    "tiers": [
+      {
+        "name": "Starter",
+        "price": "$29",
+        "period": "per month",
+        "description": "Perfect for individuals and small teams",
+        "features": [
+          "Up to 5 users",
+          "10 GB storage",
+          "Email support",
+          "Basic analytics",
+          "API access"
+        ],
+        "cta": {
+          "text": "Get Started",
+          "url": "#contact"
+        },
+        "highlighted": false
+      },
+      {
+        "name": "Professional",
+        "price": "$79",
+        "period": "per month",
+        "description": "For growing businesses and teams",
+        "features": [
+          "Up to 25 users",
+          "100 GB storage",
+          "Priority support",
+          "Advanced analytics",
+          "API access",
+          "Custom integrations"
+        ],
+        "cta": {
+          "text": "Get Started",
+          "url": "#contact"
+        },
+        "highlighted": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "pricing",
+        "description": "For large organizations with specific needs",
+        "features": [
+          "Unlimited users",
+          "Unlimited storage",
+          "24/7 phone support",
+          "Custom analytics",
+          "Dedicated account manager",
+          "SLA guarantees"
+        ],
+        "cta": {
+          "text": "Contact Sales",
+          "url": "#contact"
+        },
+        "highlighted": false
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": "How long does it take to get started?",
+      "answer": "You can be up and running in minutes! Our streamlined onboarding process guides you through setup, and our support team is available to help with any questions."
+    },
+    {
+      "question": "Can I change my plan later?",
+      "answer": "Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the billing accordingly."
+    },
+    {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major credit cards (Visa, MasterCard, American Express, Discover) and offer invoicing for annual Enterprise plans."
+    },
+    {
+      "question": "Is there a free trial?",
+      "answer": "Yes! We offer a 14-day free trial for all plans with no credit card required. Experience the full power of our platform risk-free."
+    },
+    {
+      "question": "Do you offer refunds?",
+      "answer": "We offer a 30-day money-back guarantee. If you're not satisfied for any reason, contact us within 30 days for a full refund."
+    }
+  ],
+  "contact": {
+    "headline": "Ready to Get Started?",
+    "subheadline": "Contact us today and discover how we can help transform your business.",
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "John Doe",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "john@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us about your needs...",
+      "submitText": "Send Message",
+      "successMessage": "Thank you! We'll be in touch soon.",
+      "errorMessage": "Something went wrong. Please try again."
+    }
+  }
+}

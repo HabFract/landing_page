@@ -1,0 +1,24 @@
+{
+  "name": "web",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "playwright test",
+    "test:performance": "playwright test tests/e2e/performance",
+    "test:browsers": "playwright test --project=chromium --project=firefox --project=webkit",
+    "lint": "biome check .",
+    "format": "biome format --write ."
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.0",
+    "@biomejs/biome": "^2.2.5",
+    "@playwright/test": "^1.55.1",
+    "astro": "^5.14.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

@@ -1,0 +1,96 @@
+---
+interface Props {
+  headline: string;
+  subheadline: string;
+  cta: {
+    text: string;
+    url: string;
+  };
+}
+
+const { headline, subheadline, cta } = Astro.props;
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero__content">
+      <h1 class="hero__headline">{headline}</h1>
+      <p class="hero__subheadline">{subheadline}</p>
+      <a href={cta.url} class="hero__cta">
+        {cta.text}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .hero__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero__headline {
+    color: white;
+    margin-bottom: var(--space-lg);
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+  }
+
+  .hero__subheadline {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero__cta {
+    display: inline-block;
+    background: white;
+    color: var(--color-primary);
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+    text-decoration: none;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+    color: var(--color-primary-dark);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 500px;
+    }
+
+    .hero__headline {
+      font-size: var(--font-size-4xl);
+    }
+
+    .hero__subheadline {
+      font-size: var(--font-size-lg);
+    }
+
+    .hero__cta {
+      padding: var(--space-sm) var(--space-xl);
+      font-size: var(--font-size-base);
+    }
+  }
+</style>
