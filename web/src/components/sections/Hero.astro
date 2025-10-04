@@ -26,10 +26,10 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero" style="background-image: url('/hero-img1.png')">
+<section class="hero" style="background-image: url('/hero-bg.webp')">
   <div class="container">
     <div class="hero__content">
-      <p class="hero__tagline">▸ {tagline}</p>
+      <p class="hero__tagline">{tagline}</p>
       <h1 class="hero__headline">{headline}</h1>
       <div class="hero__ctas">
         <a href={cta.primary.url} class="hero__cta hero__cta--primary">
@@ -44,41 +44,40 @@ const {
 
   <div class="hero__bottom">
     <div class="container">
-      {
-        features.length > 0 && (
-          <div class="hero__features">
-            {features.map((feature) => (
-              <div class="hero__feature">
-                <span class="hero__feature-icon">{feature.icon}</span>
-                <div class="hero__feature-content">
-                  <h3 class="hero__feature-title">{feature.title} →</h3>
-                  <p class="hero__feature-description">{feature.description}</p>
-                </div>
+      <div class="hero__bottom-grid">
+        <div class="hero__bottom-left">
+          {/* Left box - 2/3 width with features in column */}
+          {
+            features.length > 0 && (
+              <div class="hero__features">
+                {features.map((feature) => (
+                  <div class="hero__feature">
+                    <span class="hero__feature-icon">{feature.icon}</span>
+                    <div class="hero__feature-content">
+                      <h3 class="hero__feature-title">{feature.title} →</h3>
+                      <p class="hero__feature-description">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )
-      }
+            )
+          }
 
-      {
-        screenshot && (
-          <div class="hero__screenshot">
-            <img src={screenshot} alt="Product screenshot" />
+          {
+            screenshot && (
+              <div class="hero__screenshot">
+                <img src={screenshot} alt="Product screenshot" />
+              </div>
+            )
+          }
+        </div>
+        <div class="hero__bottom-right">
+          {/* Right box - 1/3 width with overlay image */}
+          <div class="hero__overlay-image">
+            <img src="/mob.png" alt="Mobile overlay" />
           </div>
-        )
-      }
-
-      <p class="hero__bottom-tagline">▸ {bottomTagline}</p>
-
-      {
-        logos.length > 0 && (
-          <div class="hero__logos">
-            {logos.map((logo) => (
-              <div class="hero__logo">{logo.name}</div>
-            ))}
-          </div>
-        )
-      }
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -97,17 +96,53 @@ const {
   }
 
   .hero .container {
-    max-width: var(--container-max-width, 1200px);
+    max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 0 var(--container-padding, 1rem);
+    padding: 0 var(--space-lg);
   }
 
   .hero__bottom {
     position: relative;
-    background: white;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.5) 20%,
+      white 30%,
+      white 100%
+    );
     padding-top: var(--space-3xl);
     padding-bottom: var(--space-4xl);
     margin-top: var(--space-4xl);
+  }
+
+  .hero__bottom-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-2xl);
+    position: relative;
+  }
+
+  .hero__bottom-left {
+    /* Left box - 2/3 width */
+  }
+
+  .hero__bottom-right {
+    /* Right box - 1/3 width with overlay image */
+    position: relative;
+  }
+
+  .hero__overlay-image {
+    position: absolute;
+    right: calc(33.333% - var(--space-2xl));
+    top: -125%;
+    height: 300%;
+    width: auto;
+  }
+
+  .hero__overlay-image img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
   }
 
   .hero__content {
@@ -117,10 +152,19 @@ const {
   }
 
   .hero__tagline {
-    color: var(--color-text-light);
+    color: var(--color-primary-dark);
+    font-family: var(--font-heading);
     font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     margin-bottom: var(--space-lg);
+  }
+
+  .hero__tagline::before {
+    content: '■ ';
+    color: var(--color-primary);
+    margin-right: var(--space-xs);
   }
 
   .hero__headline {
@@ -140,36 +184,43 @@ const {
 
   .hero__cta {
     padding: var(--space-md) var(--space-xl);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-full);
     font-weight: var(--font-weight-semibold);
     font-size: var(--font-size-base);
+    letter-spacing: 0.025em;
+    line-height: 1.6;
     text-decoration: none;
     transition: all var(--transition-base);
   }
 
   .hero__cta--primary {
-    background: var(--color-text-dark);
+    background: var(--color-primary-dark);
     color: white;
   }
 
   .hero__cta--primary:hover {
-    background: var(--color-text);
+    background: var(--color-secondary);
     transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
   }
 
   .hero__cta--secondary {
-    background: transparent;
-    color: var(--color-text-dark);
-    border: 1px solid var(--color-border);
+    background: rgba(242, 241, 236, 0.5);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-primary-dark);
   }
 
   .hero__cta--secondary:hover {
-    border-color: var(--color-text);
+    background: rgba(242, 241, 236, 0.8);
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
   }
 
   .hero__features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: var(--space-xl);
     margin-bottom: var(--space-3xl);
   }
@@ -216,32 +267,13 @@ const {
     display: block;
   }
 
-  .hero__bottom-tagline {
-    color: var(--color-text-light);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    margin-bottom: var(--space-2xl);
-    text-align: left;
-  }
-
-  .hero__logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: var(--space-2xl);
-    align-items: center;
-    justify-items: center;
-  }
-
-  .hero__logo {
-    color: var(--color-text-light);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    opacity: 0.6;
-  }
-
   @media (max-width: 768px) {
     .hero__headline {
       font-size: var(--font-size-3xl);
+    }
+
+    .hero__bottom-grid {
+      grid-template-columns: 1fr;
     }
 
     .hero__features {

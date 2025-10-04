@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { type FormEvent, useState } from 'react';
 
 interface FormData {
   name: string;
@@ -83,7 +83,7 @@ export default function ContactForm({
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch (_error) {
       setStatus('error');
     }
   };

@@ -1,18 +1,21 @@
 ---
 import BaseLayout from '../components/layouts/BaseLayout.astro';
-import Navigation from '../components/sections/Navigation.astro';
-import Hero from '../components/sections/Hero.astro';
-import Testimonial from '../components/sections/Testimonial.astro';
-import Features from '../components/sections/Features.astro';
-import Pricing from '../components/sections/Pricing.astro';
-import FAQ from '../components/sections/FAQ.astro';
 import Contact from '../components/sections/Contact.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import Features from '../components/sections/Features.astro';
+import Footer from '../components/sections/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Navigation from '../components/sections/Navigation.astro';
+import Pricing from '../components/sections/Pricing.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import UseCases from '../components/sections/UseCases.astro';
 import landingData from '../content/landing.json';
 ---
 
 <BaseLayout title="Hyperline | The new standard for revenue management">
   <Navigation />
   <Hero {...landingData.hero} />
+  <UseCases cases={landingData.useCases} />
   <Testimonial {...landingData.testimonial} />
   <Features
     headline={landingData.features.headline}
@@ -23,4 +26,5 @@ import landingData from '../content/landing.json';
   <Pricing tiers={landingData.pricing.tiers} />
   <FAQ items={landingData.faq} />
   <Contact {...landingData.contact} />
+  <Footer {...landingData.footer} />
 </BaseLayout>

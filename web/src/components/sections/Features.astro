@@ -58,17 +58,22 @@ const { headline, items, integrations, products } = Astro.props;
     {
       integrations && (
         <div class="integrations">
-          <div class="integrations__tag">▸ Integrations</div>
           <h2 class="integrations__headline">{integrations.headline}</h2>
           <p class="integrations__description">{integrations.description}</p>
-          <a href={integrations.ctaUrl} class="integrations__cta">
-            {integrations.ctaText} →
-          </a>
 
-          <div class="integrations__logos">
-            {integrations.logos.map((logo) => (
-              <div class="integrations__logo">{logo}</div>
+          <div class="integrations__grid">
+            {integrations.apps.map((app) => (
+              <div class="integrations__card">
+                <div class="integrations__icon">{app.icon}</div>
+                <span class="integrations__name">{app.name}</span>
+              </div>
             ))}
+          </div>
+
+          <div class="integrations__footer">
+            <a href={integrations.ctaUrl} class="integrations__cta">
+              {integrations.ctaText}
+            </a>
           </div>
         </div>
       )
@@ -107,6 +112,15 @@ const { headline, items, integrations, products } = Astro.props;
     color: white;
     padding-top: var(--space-4xl);
     padding-bottom: var(--space-4xl);
+    /* Pull section up to overlap with fading testimonial */
+    margin-top: -120px;
+    position: relative;
+  }
+
+  .features .container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
   }
 
   .features__headline {
@@ -170,12 +184,7 @@ const { headline, items, integrations, products } = Astro.props;
     margin-top: var(--space-4xl);
     padding-top: var(--space-4xl);
     border-top: 1px solid #333;
-  }
-
-  .integrations__tag {
-    color: #666;
-    font-size: var(--font-size-sm);
-    margin-bottom: var(--space-lg);
+    text-align: center;
   }
 
   .integrations__headline {
@@ -183,25 +192,61 @@ const { headline, items, integrations, products } = Astro.props;
     font-size: clamp(1.75rem, 3.5vw, 2.5rem);
     font-weight: var(--font-weight-bold);
     line-height: 1.2;
-    margin-bottom: var(--space-lg);
-    max-width: 800px;
+    margin-bottom: var(--space-md);
   }
 
   .integrations__description {
     color: #999;
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .integrations__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-md);
     margin-bottom: var(--space-xl);
-    max-width: 900px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .integrations__card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    transition: all var(--transition-base);
+  }
+
+  .integrations__card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .integrations__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .integrations__name {
+    color: #1a1a1a;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .integrations__footer {
+    margin-top: var(--space-2xl);
   }
 
   .integrations__cta {
-    color: white;
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
     text-decoration: none;
-    display: inline-block;
-    margin-bottom: var(--space-3xl);
     transition: opacity var(--transition-fast);
   }
 
@@ -209,23 +254,22 @@ const { headline, items, integrations, products } = Astro.props;
     opacity: 0.7;
   }
 
-  .integrations__logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: var(--space-lg);
-    max-width: 800px;
+  @media (max-width: 1024px) {
+    .integrations__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
-  .integrations__logo {
-    background: #1a1a1a;
-    padding: var(--space-md);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--font-size-sm);
-    color: #666;
-    aspect-ratio: 1;
+  @media (max-width: 768px) {
+    .integrations__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .integrations__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   /* Products */

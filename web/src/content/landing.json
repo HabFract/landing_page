@@ -1,178 +1,208 @@
 {
   "hero": {
-    "tagline": "Your engine for smarter billing and growth",
-    "headline": "Automation With Oversight",
-    "subheadline": "",
+    "tagline": "Make Growth a Habit",
+    "headline": "Agentic Intelligence. Human Oversight.",
+    "subheadline": "Deploy modular AI agents to automate your workflows, all managed from our mobile app. You guide, approve, and scale your operations, anytime, anywhere.",
     "cta": {
       "primary": {
-        "text": "Try for free",
-        "url": "#signup"
+        "text": "Explore Workflows",
+        "url": "#products"
       },
       "secondary": {
-        "text": "Book a demo",
-        "url": "#demo"
+        "text": "Book a Consultation",
+        "url": "#contact"
       }
     },
     "features": [
       {
-        "icon": "📊",
-        "title": "CPQ",
-        "description": "The fastest way to go from quote to signed contract"
+        "icon": "🧩",
+        "title": "Modular Agents",
+        "description": "Select from a library of pre-built agents for marketing, sales, and operations."
       },
       {
-        "icon": "💳",
-        "title": "Billing",
-        "description": "Flexible plans and subscriptions built for scale"
+        "icon": "📱",
+        "title": "Mobile Command",
+        "description": "Monitor progress, provide input, and manage your agents directly from your phone."
+      },
+      {
+        "icon": "🤝",
+        "title": "Human-in-the-Loop",
+        "description": "Set approval points to ensure critical tasks get your final sign-off."
       },
       {
         "icon": "📈",
-        "title": "Usage-based",
-        "description": "From usage to revenue, fully automated in real-time"
-      },
-      {
-        "icon": "💰",
-        "title": "Payments",
-        "description": "Coming this summer"
+        "title": "Scalable Systems",
+        "description": "Layer agents together to create powerful, autonomous business systems."
       }
     ],
     "screenshot": "",
-    "bottomTagline": "Powering revenue growth for the next generation",
+    "bottomTagline": "Habits ⟶ Patterns ⟶ Systems ⟶ Momentum",
     "logos": [
-      { "name": "Gladia" },
-      { "name": "ScorePlay" },
-      { "name": "Defunkt" },
-      { "name": "qobra" },
-      { "name": "lemlist" },
-      { "name": "Deer Analytics" },
-      { "name": "Formance" },
-      { "name": "MaiPal" },
-      { "name": "INFINIT" },
-      { "name": "yousign" },
-      { "name": "ecus" },
-      { "name": "swapcard" }
+      { "name": "Innovate Co" },
+      { "name": "Momentum Ventures" },
+      { "name": "ScaleUp" },
+      { "name": "NextGen Creative" },
+      { "name": "Apex Solutions" },
+      { "name": "Quantum Leap" },
+      { "name": "FutureProof" },
+      { "name": "Catalyst Corp" },
+      { "name": "Alpha Digital" },
+      { "name": "Synergy Labs" },
+      { "name": "Zenith Media" },
+      { "name": "Pivot Agency" }
     ]
   },
+  "useCases": [
+    {
+      "tag": "For Business Teams",
+      "headline": "From Repetitive Tasks to Strategic Momentum",
+      "description": "Automate everything from lead research and social media content pipelines to customer onboarding sequences. Free your team to focus on high-impact work that drives growth, while habfract handles the operational load.",
+      "image": "/designs/section3-business.png",
+      "testimonial": {
+        "quote": "Habfract took over 20 hours of weekly manual work from my marketing team in the first month. We're now focused on strategy, not spreadsheets.",
+        "author": {
+          "name": "Elena Rodriguez",
+          "role": "Head of Growth @Innovate Co",
+          "avatar": "/designs/elena-avatar.png"
+        }
+      },
+      "link": {
+        "text": "See how Innovate Co scaled their marketing",
+        "url": "#case-study-innovateco"
+      }
+    },
+    {
+      "tag": "For Individuals & Creators",
+      "headline": "Your Personal Operations Team, in Your Pocket",
+      "description": "Build systems to manage your personal brand, automate content repurposing across platforms, or even organize your research. The habfract app acts as your always-on assistant, turning your creative habits into a powerful engine for growth.",
+      "image": "/designs/section3-creator.png",
+      "testimonial": {
+        "quote": "As a solo creator, I was drowning in admin. Habfract now runs my content distribution and email newsletter. It's like having a team of three working for me 24/7.",
+        "author": {
+          "name": "David Chen",
+          "role": "Founder @NextGen Creative",
+          "avatar": "/designs/david-avatar.png"
+        }
+      }
+    }
+  ],
   "testimonial": {
-    "logo": "MaiÜu",
-    "quote": "We used to have a weekly billing review with my finance team; but Hyperline made it totally useless",
-    "ctaText": "Get a product tour",
+    "logo": "Momentum Ventures",
+    "quote": "We used to think scaling operations meant scaling headcount. Habfract proved us wrong.",
+    "ctaText": "Get a Product Tour",
     "ctaUrl": "#demo",
-    "author": "Martin Hellburg",
-    "position": "RevOps @MaiÜu",
-    "backgroundImage": "/designs/section4.png"
+    "author": "Marcus Thorne",
+    "position": "CEO @Momentum Ventures",
+    "backgroundImage": "/gradient1.jpg"
   },
   "features": {
-    "headline": "Everything that actually matters, built in",
+    "headline": "The Power of a Platform, The Simplicity of an App",
     "items": [
       {
-        "title": "Automated integrations",
-        "description": "Migrate in minutes with zero engineering",
+        "title": "Seamless Integration",
+        "description": "Connect your agents to the tools you already use, from CRMs to communication platforms.",
         "image": "/placeholder-integration.png"
       },
       {
-        "title": "Real-time support",
-        "description": "Experts answer your questions in < 10 min",
+        "title": "Expert-in-the-Loop",
+        "description": "Our experts are available to help you design, deploy, and optimize complex workflows.",
         "image": "/placeholder-support.png"
       },
       {
-        "title": "Global by design",
-        "description": "Invoice and be compliant in 100+ countries",
+        "title": "Infinitely Scalable",
+        "description": "From automating a single task to orchestrating your entire business process.",
         "image": "/placeholder-global.png"
       },
       {
-        "title": "Built-in compliance",
-        "description": "Certified e-invoicing ready in 60+ countries",
+        "title": "Transparent AI",
+        "description": "Understand how your agents work with clear logs and decision-making insights.",
         "image": "/placeholder-compliance.png"
       },
       {
-        "title": "World class infrastructure",
-        "description": "99.997% uptime across all environments",
+        "title": "World-Class Infrastructure",
+        "description": "Built for reliability and performance, ensuring your systems are always on.",
         "image": "/placeholder-infrastructure.png"
       },
       {
-        "title": "Enterprise-grade security",
-        "description": "SOC2, ISO27001, and GDPR certified",
+        "title": "Enterprise-Grade Security",
+        "description": "Your data and processes are protected with industry-leading security protocols.",
         "image": "/placeholder-security.png"
       }
     ]
   },
   "integrations": {
-    "headline": "Keep all your tools in sync with one source of truth",
-    "description": "Connect billing to the tools your team already relies on: CRMs, ERPs, payment providers, analytics platforms, data warehouses and more. Hyperline keeps everything in sync — automated, accurate, and always up to date.",
-    "ctaText": "Discover integrations",
+    "headline": "Works With Your Entire Stack",
+    "description": "Habfract agents seamlessly integrate with the business-critical tools you rely on every day.",
+    "ctaText": "Connect Your Most Important Apps",
     "ctaUrl": "#integrations",
-    "logos": [
-      "Figma",
-      "Index",
-      "QuickBooks",
-      "Xero",
-      "Clockify",
-      "Arrows",
-      "Anrok",
-      "Lemon Squeezy",
-      "NetSuite",
-      "Stripe",
-      "M",
-      "Salesforce",
-      "HubSpot",
-      "PostgreSQL",
-      "Mailchimp",
-      "Snowflake",
-      "PostgreSQL",
-      "Arrows",
-      "Mint"
+    "apps": [
+      { "icon": "💬", "name": "Slack" },
+      { "icon": "📝", "name": "Notion" },
+      { "icon": "📧", "name": "Gmail" },
+      { "icon": "📅", "name": "Google Calendar" },
+      { "icon": "☁️", "name": "Google Drive" },
+      { "icon": "📊", "name": "Google Sheets" },
+      { "icon": "💻", "name": "GitHub" },
+      { "icon": "📋", "name": "Trello" },
+      { "icon": "👥", "name": "Microsoft Teams" },
+      { "icon": "🛍️", "name": "Shopify" },
+      { "icon": "🧡", "name": "HubSpot" },
+      { "icon": "☁️", "name": "Salesforce" },
+      { "icon": "📆", "name": "Calendly" },
+      { "icon": "🎮", "name": "Discord" },
+      { "icon": "📺", "name": "YouTube" },
+      { "icon": "⭕", "name": "Odoo" }
     ]
   },
   "products": {
-    "headline": "Modular tools for your entire revenue journey",
+    "headline": "Build Your Autonomous Workforce, One Agent at a Time",
     "items": [
       {
-        "icon": "€",
+        "icon": "🎯",
         "iconColor": "#14B8A6",
-        "title": "CPQ",
-        "description": "The fastest way to from quote to signed contract",
+        "title": "Marketing & Sales Agents",
+        "description": "Automate lead generation, social media management, email campaigns, and reporting.",
         "ctaText": "→",
-        "ctaUrl": "#cpq"
+        "ctaUrl": "#marketing-agents"
       },
       {
-        "icon": "»",
+        "icon": "⚙️",
         "iconColor": "#3B82F6",
-        "title": "Billing",
-        "description": "Flexible plans and billing flows, built for scale",
+        "title": "Operations & Admin Agents",
+        "description": "Handle inbox sorting, meeting scheduling, data entry, and internal reporting.",
         "ctaText": "→",
-        "ctaUrl": "#billing"
+        "ctaUrl": "#operations-agents"
       },
       {
-        "icon": "⚡",
+        "icon": "💡",
         "iconColor": "#8B5CF6",
-        "title": "Usage-based",
-        "description": "From usage to revenue, fully automated in real-time",
+        "title": "Creative & Content Agents",
+        "description": "Repurpose content, generate ideas, draft copy, and manage distribution.",
         "ctaText": "→",
-        "ctaUrl": "#usage"
+        "ctaUrl": "#creative-agents"
       },
       {
-        "icon": "⊞",
+        "icon": "➕",
         "iconColor": "#F97316",
-        "title": "Payments",
-        "description": "New payment module available this summer",
+        "title": "Custom System Design",
+        "description": "Work with our experts to build a bespoke, end-to-end system for your business.",
         "ctaText": "→",
-        "ctaUrl": "#payments"
+        "ctaUrl": "#custom-systems"
       }
     ]
   },
   "pricing": {
     "tiers": [
       {
-        "name": "Starter",
-        "price": "$29",
+        "name": "Spark",
+        "price": "$99",
         "period": "per month",
-        "description": "Perfect for individuals and small teams",
+        "description": "Perfect for individuals and solopreneurs.",
         "features": [
-          "Up to 5 users",
-          "10 GB storage",
-          "Email support",
-          "Basic analytics",
-          "API access"
+          "Up to 3 active workflows",
+          "Access to standard agents",
+          "Mobile app access",
+          "Community support"
         ],
         "cta": {
           "text": "Get Started",
@@ -181,17 +211,16 @@
         "highlighted": false
       },
       {
-        "name": "Professional",
-        "price": "$79",
+        "name": "Momentum",
+        "price": "$499",
         "period": "per month",
-        "description": "For growing businesses and teams",
+        "description": "For growing businesses and teams.",
         "features": [
-          "Up to 25 users",
-          "100 GB storage",
-          "Priority support",
-          "Advanced analytics",
-          "API access",
-          "Custom integrations"
+          "Up to 15 active workflows",
+          "Access to premium agents",
+          "Team collaboration features",
+          "Priority email support",
+          "Advanced integrations"
         ],
         "cta": {
           "text": "Get Started",
@@ -200,17 +229,16 @@
         "highlighted": true
       },
       {
-        "name": "Enterprise",
+        "name": "System",
         "price": "Custom",
         "period": "pricing",
-        "description": "For large organizations with specific needs",
+        "description": "For organizations building core business functions on AI.",
         "features": [
-          "Unlimited users",
-          "Unlimited storage",
-          "24/7 phone support",
-          "Custom analytics",
-          "Dedicated account manager",
-          "SLA guarantees"
+          "Unlimited workflows",
+          "Custom agent development",
+          "Dedicated automation expert",
+          "Bespoke system design",
+          "24/7 priority support"
         ],
         "cta": {
           "text": "Contact Sales",
@@ -222,39 +250,123 @@
   },
   "faq": [
     {
-      "question": "How long does it take to get started?",
-      "answer": "You can be up and running in minutes! Our streamlined onboarding process guides you through setup, and our support team is available to help with any questions."
+      "question": "What is an agentic workflow?",
+      "answer": "An agentic workflow is a series of tasks carried out by one or more AI agents to achieve a specific goal. You can choose from our pre-built workflows (like 'Post daily on social media') or work with us to create a custom one for your unique needs."
     },
     {
-      "question": "Can I change my plan later?",
-      "answer": "Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the billing accordingly."
+      "question": "How does the 'human-in-the-loop' feature work?",
+      "answer": "You can set specific checkpoints within any workflow where an agent must pause and wait for your approval via the mobile app. This ensures you have final say on critical actions, like sending an important email or publishing content."
     },
     {
-      "question": "What payment methods do you accept?",
-      "answer": "We accept all major credit cards (Visa, MasterCard, American Express, Discover) and offer invoicing for annual Enterprise plans."
+      "question": "Can I try habfract before committing?",
+      "answer": "Yes. We offer a consultation to understand your needs and can set up a proof-of-concept workflow for qualified businesses to demonstrate the value before you subscribe to a plan."
     },
     {
-      "question": "Is there a free trial?",
-      "answer": "Yes! We offer a 14-day free trial for all plans with no credit card required. Experience the full power of our platform risk-free."
+      "question": "What kind of support do you offer?",
+      "answer": "All plans come with access to our support resources. The Momentum plan includes priority email support, and the System plan provides you with a dedicated automation expert to help you build and maintain your workflows."
     },
     {
-      "question": "Do you offer refunds?",
-      "answer": "We offer a 30-day money-back guarantee. If you're not satisfied for any reason, contact us within 30 days for a full refund."
+      "question": "Is my company's data secure?",
+      "answer": "Absolutely. We use enterprise-grade security protocols to ensure your data is encrypted and secure. We are committed to maintaining the privacy and integrity of your information. You own your data, always."
     }
   ],
   "contact": {
-    "headline": "Ready to Get Started?",
-    "subheadline": "Contact us today and discover how we can help transform your business.",
+    "headline": "Ready to Build Your Momentum?",
+    "subheadline": "Tell us about your goals, and we'll show you how habfract can build a system to achieve them.",
     "form": {
       "nameLabel": "Full Name",
       "namePlaceholder": "John Doe",
       "emailLabel": "Email Address",
       "emailPlaceholder": "john@example.com",
-      "messageLabel": "Message",
-      "messagePlaceholder": "Tell us about your needs...",
-      "submitText": "Send Message",
-      "successMessage": "Thank you! We'll be in touch soon.",
+      "messageLabel": "What would you like to automate?",
+      "messagePlaceholder": "e.g., Lead generation, customer support, content creation...",
+      "submitText": "Book Consultation",
+      "successMessage": "Thank you! We'll be in touch soon to schedule your consultation.",
       "errorMessage": "Something went wrong. Please try again."
     }
+  },
+  "footer": {
+    "stats": [
+      {
+        "label": "Operational Efficiency",
+        "value": "15+",
+        "description": "hours saved per user, per week"
+      },
+      {
+        "label": "Increased Throughput",
+        "value": "300%",
+        "description": "average increase in task output"
+      },
+      {
+        "label": "Workflows Deployed",
+        "value": "10,000+",
+        "description": "intelligent workflows active"
+      }
+    ],
+    "cta": {
+      "headline": "Designed for scale, loved for control.",
+      "description": "The AI automation platform that keeps you in the driver's seat.",
+      "buttonText": "Start Automating Today",
+      "buttonUrl": "#signup",
+      "disclaimer": "Book a free, no-obligation consultation."
+    },
+    "logo": "habfract",
+    "columns": [
+      {
+        "title": "Solutions",
+        "links": [
+          { "text": "Marketing Agents", "url": "#marketing-agents" },
+          { "text": "Operations Agents", "url": "#operations-agents" },
+          { "text": "Creative Agents", "url": "#creative-agents" },
+          { "text": "Custom Systems", "url": "#custom-systems" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "text": "About Us", "url": "#about" },
+          { "text": "Blog", "url": "#blog" },
+          { "text": "Careers", "url": "#careers" },
+          { "text": "Contact Us", "url": "#contact" }
+        ]
+      },
+      {
+        "title": "Platform",
+        "links": [
+          { "text": "Login", "url": "#login" },
+          { "text": "Explore Workflows", "url": "#products" },
+          { "text": "Talk to an Expert", "url": "#contact" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "text": "Documentation", "url": "#docs" },
+          { "text": "Case Studies", "url": "#case-studies" },
+          { "text": "Security", "url": "#security" },
+          { "text": "API Status", "url": "#status" }
+        ]
+      },
+      {
+        "title": "Integrations",
+        "links": [
+          { "text": "Slack", "url": "#slack" },
+          { "text": "Salesforce", "url": "#salesforce" },
+          { "text": "Hubspot", "url": "#hubspot" },
+          { "text": "Notion", "url": "#notion" },
+          { "text": "Google Workspace", "url": "#gsuite" },
+          { "text": "All integrations", "url": "#integrations" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "text": "Terms of Service", "url": "#terms" },
+          { "text": "Privacy Policy", "url": "#privacy" }
+        ]
+      }
+    ],
+    "copyright": "habfract © 2025 — All Rights Reserved.",
+    "compliance": "Enterprise-Grade Security & Privacy 🔒"
   }
 }

@@ -6,25 +6,26 @@
  */
 
 :root {
-  /* Brand Colors - Extracted from HabFract logo */
-  --color-primary: #1e9dd8;
-  --color-primary-dark: #1780b3;
-  --color-primary-light: #45b7e0;
+  /* Brand Colors - HabFract Palette */
+  --color-primary: #41c1ba;
+  --color-primary-dark: #1d4355;
+  --color-primary-light: #62ddd6;
 
-  --color-secondary: #45b7af;
-  --color-secondary-dark: #3a9a93;
-  --color-secondary-light: #4ecdc4;
+  --color-secondary: #289dd2;
+  --color-secondary-dark: #1d4355;
+  --color-secondary-light: #62ddd6;
 
-  --color-accent: #4ecdc4;
-  --color-accent-dark: #3ab7af;
-  --color-accent-light: #6fd9d1;
+  --color-accent: #aae7e1;
+  --color-accent-dark: #41c1ba;
+  --color-accent-light: #62ddd6;
 
   /* Neutral Colors */
-  --color-text: #1f2937;
-  --color-text-light: #6b7280;
-  --color-text-dark: #5b7b8d;
+  --color-text: #1d4355;
+  --color-text-light: #5e7682;
+  --color-text-dark: #1d4355;
 
   --color-bg: #ffffff;
+  --color-bg-light: #f2f1ec;
   --color-bg-secondary: #f9fafb;
   --color-bg-tertiary: #f3f4f6;
 
@@ -33,11 +34,11 @@
 
   /* Typography */
   --font-heading:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    "Barlow", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-body:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-mono:
     "SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
 

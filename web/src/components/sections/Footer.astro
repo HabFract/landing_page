@@ -1,0 +1,316 @@
+---
+interface Stat {
+  label: string;
+  value: string;
+  description: string;
+}
+
+interface FooterLink {
+  text: string;
+  url: string;
+}
+
+interface FooterColumn {
+  title: string;
+  links: FooterLink[];
+}
+
+interface Props {
+  stats?: Stat[];
+  cta?: {
+    headline: string;
+    description: string;
+    buttonText: string;
+    buttonUrl: string;
+    disclaimer?: string;
+  };
+  logo?: string;
+  columns?: FooterColumn[];
+  copyright?: string;
+  compliance?: string;
+}
+
+const { stats = [], cta, logo = 'Hyperline', columns = [], copyright, compliance } = Astro.props;
+---
+
+<footer class="footer">
+  {/* Stats Section */}
+  {
+    stats.length > 0 && (
+      <div class="footer__stats">
+        <div class="container">
+          <div class="footer__stats-grid">
+            {stats.map((stat) => (
+              <div class="footer__stat-card">
+                <div class="footer__stat-label">{stat.label}</div>
+                <div class="footer__stat-value">{stat.value}</div>
+                <div class="footer__stat-description">{stat.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  {/* CTA Section */}
+  {
+    cta && (
+      <div class="footer__cta">
+        <div class="container">
+          <h2 class="footer__cta-headline">{cta.headline}</h2>
+          <p class="footer__cta-description">{cta.description}</p>
+          <a href={cta.buttonUrl} class="footer__cta-button">
+            {cta.buttonText}
+          </a>
+          {cta.disclaimer && <p class="footer__cta-disclaimer">{cta.disclaimer}</p>}
+        </div>
+      </div>
+    )
+  }
+
+  {/* Footer Links */}
+  <div class="footer__links">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">{logo}</div>
+        </div>
+        {
+          columns.map((column) => (
+            <div class="footer__column">
+              <h3 class="footer__column-title">{column.title}</h3>
+              <ul class="footer__column-links">
+                {column.links.map((link) => (
+                  <li>
+                    <a href={link.url}>{link.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  {/* Footer Bottom */}
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-content">
+        {copyright && <p class="footer__copyright">{copyright}</p>}
+        {compliance && <p class="footer__compliance">{compliance}</p>}
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #0a0a0a;
+    color: white;
+  }
+
+  .container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+  }
+
+  /* Stats Section */
+  .footer__stats {
+    padding: var(--space-4xl) 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .footer__stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .footer__stat-card {
+    background: #1a1a1a;
+    padding: var(--space-2xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid #2a2a2a;
+  }
+
+  .footer__stat-label {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .footer__stat-value {
+    color: white;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer__stat-description {
+    color: #ccc;
+    font-size: var(--font-size-base);
+  }
+
+  /* CTA Section */
+  .footer__cta {
+    padding: var(--space-4xl) 0;
+    text-align: center;
+  }
+
+  .footer__cta-headline {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--space-lg);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer__cta-description {
+    color: #999;
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer__cta-button {
+    display: inline-block;
+    background: white;
+    color: #0a0a0a;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.025em;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .footer__cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .footer__cta-disclaimer {
+    color: #666;
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-md);
+  }
+
+  /* Footer Links */
+  .footer__links {
+    padding: var(--space-4xl) 0;
+    border-top: 1px solid #333;
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  .footer__brand {
+    padding-right: var(--space-2xl);
+  }
+
+  .footer__logo {
+    color: white;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-md);
+  }
+
+  .footer__column-title {
+    color: white;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-lg);
+  }
+
+  .footer__column-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .footer__column-links a {
+    color: #999;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer__column-links a:hover {
+    color: white;
+  }
+
+  /* Footer Bottom */
+  .footer__bottom {
+    border-top: 1px solid #333;
+    padding: var(--space-xl) 0;
+  }
+
+  .footer__bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: var(--font-size-xs);
+  }
+
+  .footer__copyright,
+  .footer__compliance {
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .footer__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer__brand {
+      grid-column: 1 / -1;
+      padding-right: 0;
+      margin-bottom: var(--space-xl);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer__stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__bottom-content {
+      flex-direction: column;
+      gap: var(--space-sm);
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

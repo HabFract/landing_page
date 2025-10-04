@@ -1,0 +1,233 @@
+---
+interface UseCase {
+  tag: string;
+  headline: string;
+  description: string;
+  image: string;
+  testimonial: {
+    quote: string;
+    author: {
+      name: string;
+      role: string;
+      avatar?: string;
+    };
+  };
+  link?: {
+    text: string;
+    url: string;
+  };
+}
+
+interface Props {
+  cases: UseCase[];
+}
+
+const { cases } = Astro.props;
+---
+
+<section class="use-cases">
+  <div class="use-cases__grid">
+    {cases.map((useCase) => (
+      <article class="use-case">
+        <div class="use-case__content">
+          <span class="use-case__tag">{useCase.tag}</span>
+          <h2 class="use-case__headline">{useCase.headline}</h2>
+          <p class="use-case__description">{useCase.description}</p>
+
+          <div class="use-case__testimonial">
+            <blockquote class="use-case__quote">
+              "{useCase.testimonial.quote}"
+            </blockquote>
+            <div class="use-case__author">
+              {useCase.testimonial.author.avatar && (
+                <img
+                  src={useCase.testimonial.author.avatar}
+                  alt={useCase.testimonial.author.name}
+                  class="use-case__avatar"
+                />
+              )}
+              <div class="use-case__author-info">
+                <cite class="use-case__author-name">{useCase.testimonial.author.name}</cite>
+                <span class="use-case__author-role">{useCase.testimonial.author.role}</span>
+              </div>
+            </div>
+          </div>
+
+          {useCase.link && (
+            <a href={useCase.link.url} class="use-case__link">
+              {useCase.link.text} →
+            </a>
+          )}
+        </div>
+
+        <div class="use-case__visual">
+          <img
+            src={useCase.image}
+            alt={`${useCase.headline} screenshot`}
+            class="use-case__image"
+          />
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .use-cases {
+    padding: var(--space-xl) var(--space-md);
+    background: var(--color-bg-light);
+  }
+
+  .use-cases__grid {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .use-case {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .use-case {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+    }
+
+    .use-case:nth-child(even) .use-case__content {
+      order: 2;
+    }
+
+    .use-case:nth-child(even) .use-case__visual {
+      order: 1;
+    }
+  }
+
+  .use-case__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .use-case__tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: var(--space-xs) 0;
+  }
+
+  .use-case__tag::before {
+    content: '■ ';
+    color: var(--color-primary);
+    margin-right: var(--space-xs);
+  }
+
+  .use-case__headline {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .use-case__description {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .use-case__testimonial {
+    margin-top: var(--space-md);
+    padding: var(--space-md);
+    background: var(--color-bg-white);
+    border-radius: 8px;
+  }
+
+  .use-case__quote {
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-md) 0;
+    font-style: italic;
+  }
+
+  .use-case__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .use-case__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .use-case__author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .use-case__author-name {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-style: normal;
+  }
+
+  .use-case__author-role {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .use-case__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-top: var(--space-sm);
+    transition: color 0.2s;
+  }
+
+  .use-case__link:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .use-case__visual {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .use-case__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 767px) {
+    .use-cases {
+      padding: var(--space-lg) var(--space-sm);
+    }
+
+    .use-case__testimonial {
+      padding: var(--space-sm);
+    }
+  }
+</style>
