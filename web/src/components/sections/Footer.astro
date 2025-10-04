@@ -131,9 +131,11 @@ const { stats = [], cta, logo = 'Hyperline', columns = [], copyright, compliance
 
   .footer__stat-card {
     background: #1a1a1a;
-    padding: var(--space-2xl);
+    padding: var(--space-xl) var(--space-lg);
     border-radius: var(--radius-lg);
     border: 1px solid #2a2a2a;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .footer__stat-label {

@@ -1,7 +1,7 @@
 {
   "hero": {
     "tagline": "Make Growth a Habit",
-    "headline": "Agentic Intelligence. Human Oversight.",
+    "headline": "Agentic Intelligence, Human Oversight.",
     "subheadline": "Deploy modular AI agents to automate your workflows, all managed from our mobile app. You guide, approve, and scale your operations, anytime, anywhere.",
     "cta": {
       "primary": {
@@ -89,8 +89,8 @@
   "testimonial": {
     "logo": "Momentum Ventures",
     "quote": "We used to think scaling operations meant scaling headcount. Habfract proved us wrong.",
-    "ctaText": "Get a Product Tour",
-    "ctaUrl": "#demo",
+    "ctaText": "Book a Consultation",
+    "ctaUrl": "#contact",
     "author": "Marcus Thorne",
     "position": "CEO @Momentum Ventures",
     "backgroundImage": "/gradient1.jpg"
@@ -306,9 +306,9 @@
     "cta": {
       "headline": "Designed for scale, loved for control.",
       "description": "The AI automation platform that keeps you in the driver's seat.",
-      "buttonText": "Start Automating Today",
-      "buttonUrl": "#signup",
-      "disclaimer": "Book a free, no-obligation consultation."
+      "buttonText": "Book a Free Consultation",
+      "buttonUrl": "#contact",
+      "disclaimer": "No commitment required."
     },
     "logo": "habfract",
     "columns": [
@@ -335,7 +335,7 @@
         "links": [
           { "text": "Login", "url": "#login" },
           { "text": "Explore Workflows", "url": "#products" },
-          { "text": "Talk to an Expert", "url": "#contact" }
+          { "text": "Book a Consultation", "url": "#contact" }
         ]
       },
       {

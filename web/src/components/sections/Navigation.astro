@@ -5,9 +5,9 @@
 <nav class="nav">
   <div class="container">
     <div class="nav__wrapper">
-      <div class="nav__logo">
+      <a href="#" class="nav__logo">
         <img src="/logos/3.png" alt="Logo" class="nav__logo-image" />
-      </div>
+      </a>
 
       <ul class="nav__menu">
         <li class="nav__menu-item">
@@ -16,21 +16,11 @@
         <li class="nav__menu-item">
           <a href="#pricing">Pricing</a>
         </li>
-        <li class="nav__menu-item">
-          <a href="#docs">Docs</a>
-        </li>
-        <li class="nav__menu-item">
-          <a href="#customers">Customers</a>
-        </li>
-        <li class="nav__menu-item">
-          <a href="#resources">Resources</a>
-        </li>
       </ul>
 
       <div class="nav__actions">
-        <a href="#login" class="nav__link">Login</a>
-        <a href="#signup" class="nav__link">Sign-up</a>
-        <a href="#demo" class="nav__button">Book demo</a>
+        <a href="#contact" class="nav__link">Join Waitlist</a>
+        <a href="#contact" class="nav__button">Book a Call</a>
       </div>
     </div>
   </div>
@@ -39,11 +29,27 @@
 <style>
   .nav {
     background: white;
-    border-bottom: 1px solid var(--color-border-light);
-    padding: var(--space-md) 0;
+    border: none;
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    padding: var(--space-md);
+    margin: 0 auto;
+    max-width: var(--container-xl);
     position: sticky;
     top: 0;
     z-index: var(--z-sticky);
+    box-shadow: none;
+    transition: box-shadow var(--transition-base);
+  }
+
+  .nav.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav .container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
   }
 
   .nav__wrapper {
@@ -95,11 +101,12 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-base);
   }
 
   .nav__link:hover {
-    color: var(--color-text-dark);
+    color: var(--color-primary);
+    transform: translateY(-1px);
   }
 
   .nav__button {
@@ -112,14 +119,16 @@
     letter-spacing: 0.025em;
     line-height: 1.6;
     text-decoration: none;
-    transition: background var(--transition-fast);
+    transition: all var(--transition-base);
   }
 
   .nav__button:hover {
-    background: var(--color-text);
+    background: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     .nav__menu {
       display: none;
     }
@@ -133,3 +142,18 @@
     }
   }
 </style>
+
+<script>
+  const nav = document.querySelector('.nav');
+
+  function handleScroll() {
+    if (window.scrollY > 0) {
+      nav?.classList.add('scrolled');
+    } else {
+      nav?.classList.remove('scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Check initial state
+</script>

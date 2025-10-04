@@ -76,6 +76,14 @@ const { cases } = Astro.props;
   .use-cases {
     padding: var(--space-xl) var(--space-md);
     background: var(--color-bg-light);
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 640px) {
+    .use-cases {
+      margin-top: -100px;
+    }
   }
 
   .use-cases__grid {

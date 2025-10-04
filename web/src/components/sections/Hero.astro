@@ -95,10 +95,18 @@ const {
     margin-left: calc(-50vw + 50%);
   }
 
+  @media (min-width: 2000px) {
+    .hero {
+      background-size: contain;
+      background-position: calc(center - 30vw) bottom;
+    }
+  }
+
   .hero .container {
     max-width: var(--container-xl);
     margin: 0 auto;
-    padding: 0 var(--space-lg);
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
   }
 
   .hero__bottom {
@@ -115,6 +123,11 @@ const {
     margin-top: var(--space-4xl);
   }
 
+  .hero__bottom .container {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+  }
+
   .hero__bottom-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -124,6 +137,17 @@ const {
 
   .hero__bottom-left {
     /* Left box - 2/3 width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--color-bg-light) 100%
+    );
+    border-bottom-left-radius: var(--radius-xl);
+    border-bottom-right-radius: var(--radius-xl);
+    padding: var(--space-xl);
   }
 
   .hero__bottom-right {
@@ -134,7 +158,7 @@ const {
   .hero__overlay-image {
     position: absolute;
     right: calc(33.333% - var(--space-2xl));
-    top: -125%;
+    top: -150%;
     height: 300%;
     width: auto;
   }
@@ -222,7 +246,8 @@ const {
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
-    margin-bottom: var(--space-3xl);
+    margin-bottom: 0;
+    padding-top: var(--space-2xl);
   }
 
   .hero__feature {
@@ -267,9 +292,94 @@ const {
     display: block;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 640px) and (max-width: 1024px) {
+    .hero {
+      background-position: calc(center - 15vw) center;
+    }
+
+    .hero__ctas {
+      flex-direction: column;
+      max-width: 33vw;
+    }
+
+    .hero__cta {
+      width: 100%;
+      text-align: center;
+      padding: var(--space-md) var(--space-xl);
+    }
+  }
+
+  @media (min-width: 640px) {
+    .hero .container {
+      padding-left: var(--space-2xl);
+      padding-right: var(--space-2xl);
+    }
+
+    .hero__bottom .container {
+      padding-left: var(--space-2xl);
+      padding-right: var(--space-2xl);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero .container {
+      padding-left: var(--space-2xl);
+      padding-right: var(--space-2xl);
+    }
+
+    .hero__bottom .container {
+      padding-left: var(--space-2xl);
+      padding-right: var(--space-2xl);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero .container {
+      padding-left: var(--space-3xl);
+      padding-right: var(--space-3xl);
+    }
+
+    .hero__bottom .container {
+      padding-left: var(--space-3xl);
+      padding-right: var(--space-3xl);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero .container {
+      padding-left: var(--space-2xl);
+      padding-right: var(--space-2xl);
+    }
+
+    .hero__bottom .container {
+      padding-left: var(--space-2xl);
+      padding-right: var(--space-2xl);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      background-position: center center;
+      background-size: cover;
+    }
+
+    .hero__bottom {
+      margin-top: var(--space-lg);
+      padding-top: 0;
+      padding-bottom: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 5%,
+        rgba(255, 255, 255, 0.7) 10%,
+        white 15%,
+        white 100%
+      );
+    }
+
     .hero__headline {
-      font-size: var(--font-size-3xl);
+      font-size: clamp(2.25rem, 9vw, 3rem);
+      line-height: 1.2;
     }
 
     .hero__bottom-grid {
@@ -278,6 +388,29 @@ const {
 
     .hero__features {
       grid-template-columns: 1fr;
+      margin-bottom: var(--space-lg);
+    }
+
+    .hero__bottom-right {
+      position: relative;
+      width: 100%;
+      margin-top: var(--space-lg);
+    }
+
+    .hero__overlay-image {
+      position: relative;
+      right: auto;
+      top: 0;
+      height: auto;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .hero__overlay-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 
     .hero__ctas {
@@ -287,6 +420,7 @@ const {
     .hero__cta {
       width: 100%;
       text-align: center;
+      padding: var(--space-sm) var(--space-lg);
     }
   }
 </style>

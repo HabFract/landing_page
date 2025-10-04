@@ -13,7 +13,7 @@ interface Props {
 const { logo, quote, ctaText, ctaUrl, author, position, backgroundImage } = Astro.props;
 ---
 
-<section class="testimonial" style={backgroundImage ? `background-image: url('${backgroundImage}')` : ''}>
+<section id="products" class="testimonial" style={backgroundImage ? `background-image: url('${backgroundImage}')` : ''}>
   <div class="testimonial__overlay"></div>
   <div class="container">
     <div class="testimonial__content">
