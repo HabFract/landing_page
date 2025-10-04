@@ -1,0 +1,4 @@
+{
+  "claude.hooks.path": ".claude/hooks.json",
+  "claude.subAgents.path": ".claude/agents"
+}
