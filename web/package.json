@@ -18,7 +18,10 @@
     "@biomejs/biome": "^2.2.5",
     "@playwright/test": "^1.55.1",
     "astro": "^5.14.1",
+    "clsx": "^2.1.1",
+    "motion": "^12.23.22",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.3.1"
   }
 }

@@ -9,30 +9,88 @@
         "url": "#products"
       },
       "secondary": {
-        "text": "Book a Consultation",
+        "text": "Book a Call",
         "url": "#contact"
       }
     },
-    "features": [
+    "products": [
       {
-        "icon": "🧩",
-        "title": "Modular Agents",
-        "description": "Select from a library of pre-built agents for marketing, sales, and operations."
+        "id": "automate",
+        "name": "Automate",
+        "features": [
+          {
+            "icon": "🎯",
+            "title": "Workflow Automation",
+            "description": "Automate repetitive tasks across marketing, sales, and operations with pre-built agent templates."
+          },
+          {
+            "icon": "🔄",
+            "title": "Multi-Channel Orchestration",
+            "description": "Chain agents together to create end-to-end processes that span multiple tools and platforms."
+          },
+          {
+            "icon": "📱",
+            "title": "Mobile-First Control",
+            "description": "Monitor, approve, and manage all your automated workflows from anywhere via our mobile app."
+          },
+          {
+            "icon": "⚡",
+            "title": "Instant Deployment",
+            "description": "Launch automation workflows in minutes, not weeks. No coding required."
+          }
+        ]
       },
       {
-        "icon": "📱",
-        "title": "Mobile Command",
-        "description": "Monitor progress, provide input, and manage your agents directly from your phone."
+        "id": "plan",
+        "name": "Plan",
+        "features": [
+          {
+            "icon": "🗓️",
+            "title": "Strategic Planning",
+            "description": "AI-powered planning tools to map out your growth initiatives and operational roadmaps."
+          },
+          {
+            "icon": "📊",
+            "title": "Resource Optimization",
+            "description": "Intelligently allocate team resources and automation capacity for maximum efficiency."
+          },
+          {
+            "icon": "🎯",
+            "title": "Goal Tracking",
+            "description": "Set objectives and track progress with real-time insights from your automated systems."
+          },
+          {
+            "icon": "🔮",
+            "title": "Predictive Analytics",
+            "description": "Forecast outcomes and optimize workflows based on historical performance data."
+          }
+        ]
       },
       {
-        "icon": "🤝",
-        "title": "Human-in-the-Loop",
-        "description": "Set approval points to ensure critical tasks get your final sign-off."
-      },
-      {
-        "icon": "📈",
-        "title": "Scalable Systems",
-        "description": "Layer agents together to create powerful, autonomous business systems."
+        "id": "learn",
+        "name": "Learn",
+        "features": [
+          {
+            "icon": "📚",
+            "title": "Automation Academy",
+            "description": "Access courses, tutorials, and best practices for building effective AI-powered workflows."
+          },
+          {
+            "icon": "🎓",
+            "title": "Expert Workshops",
+            "description": "Live training sessions and workshops led by automation experts to level up your skills."
+          },
+          {
+            "icon": "💡",
+            "title": "Community Knowledge",
+            "description": "Learn from other users' workflows, templates, and success stories in our community."
+          },
+          {
+            "icon": "🤝",
+            "title": "1-on-1 Consulting",
+            "description": "Get personalized guidance from our team to design custom automation strategies for your business."
+          }
+        ]
       }
     ],
     "screenshot": "",
@@ -89,7 +147,7 @@
   "testimonial": {
     "logo": "Momentum Ventures",
     "quote": "We used to think scaling operations meant scaling headcount. Habfract proved us wrong.",
-    "ctaText": "Book a Consultation",
+    "ctaText": "Book a Call",
     "ctaUrl": "#contact",
     "author": "Marcus Thorne",
     "position": "CEO @Momentum Ventures",
@@ -142,7 +200,6 @@
       { "icon": "📅", "name": "Google Calendar" },
       { "icon": "☁️", "name": "Google Drive" },
       { "icon": "📊", "name": "Google Sheets" },
-      { "icon": "💻", "name": "GitHub" },
       { "icon": "📋", "name": "Trello" },
       { "icon": "👥", "name": "Microsoft Teams" },
       { "icon": "🛍️", "name": "Shopify" },
@@ -151,7 +208,8 @@
       { "icon": "📆", "name": "Calendly" },
       { "icon": "🎮", "name": "Discord" },
       { "icon": "📺", "name": "YouTube" },
-      { "icon": "⭕", "name": "Odoo" }
+      { "icon": "⭕", "name": "X" },
+      { "icon": "⭕", "name": "Facebook" }
     ]
   },
   "products": {
@@ -335,7 +393,7 @@
         "links": [
           { "text": "Login", "url": "#login" },
           { "text": "Explore Workflows", "url": "#products" },
-          { "text": "Book a Consultation", "url": "#contact" }
+          { "text": "Book a Call", "url": "#contact" }
         ]
       },
       {

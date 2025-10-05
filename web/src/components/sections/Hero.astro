@@ -1,5 +1,20 @@
 ---
 // Hero section matching section1.png design
+import ProductTransition from '../ui/ProductTransition';
+import { TextLoop } from '../ui/TextLoop';
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Product {
+  id: string;
+  name: string;
+  features: Feature[];
+}
+
 interface Props {
   headline: string;
   subheadline: string;
@@ -8,7 +23,7 @@ interface Props {
     primary: { text: string; url: string };
     secondary: { text: string; url: string };
   };
-  features?: Array<{ icon: string; title: string; description: string }>;
+  products?: Product[];
   screenshot?: string;
   bottomTagline?: string;
   logos?: Array<{ name: string; image?: string }>;
@@ -19,18 +34,26 @@ const {
   subheadline,
   tagline = 'Your engine for smarter billing and growth',
   cta,
-  features = [],
+  products = [],
   screenshot,
   bottomTagline = 'Powering revenue growth for the next generation',
   logos = [],
 } = Astro.props;
 ---
 
-<section class="hero" style="background-image: url('/hero-bg.webp')">
+<section class="hero">
   <div class="container">
     <div class="hero__content">
       <p class="hero__tagline">{tagline}</p>
-      <h1 class="hero__headline">{headline}</h1>
+      <h1 class="hero__headline">
+        <span class="hero__headline-line">Agentic Intelligence,</span>
+        <span class="hero__headline-line"><span class="hero__headline-muted">Human</span>&nbsp;<TextLoop
+          client:load
+          words={['Oversight', 'Connection', 'Growth']}
+          className="overflow-y-clip hero__headline-accent"
+          interval={4000}
+        /></span>
+      </h1>
       <div class="hero__ctas">
         <a href={cta.primary.url} class="hero__cta hero__cta--primary">
           {cta.primary.text}
@@ -46,22 +69,8 @@ const {
     <div class="container">
       <div class="hero__bottom-grid">
         <div class="hero__bottom-left">
-          {/* Left box - 2/3 width with features in column */}
-          {
-            features.length > 0 && (
-              <div class="hero__features">
-                {features.map((feature) => (
-                  <div class="hero__feature">
-                    <span class="hero__feature-icon">{feature.icon}</span>
-                    <div class="hero__feature-content">
-                      <h3 class="hero__feature-title">{feature.title} →</h3>
-                      <p class="hero__feature-description">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )
-          }
+          {/* Product transition with features */}
+          {products.length > 0 && <ProductTransition products={products} client:load />}
 
           {
             screenshot && (
@@ -86,18 +95,20 @@ const {
   .hero {
     position: relative;
     background-color: white;
+    background-image: url('/hero-bg.webp');
     background-size: cover;
-    background-position: calc(center - 30vw) center;
+    background-position: center center;
     background-repeat: no-repeat;
     padding-top: var(--space-4xl);
     padding-bottom: 0;
+    min-height: 80vh;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
   }
 
   @media (min-width: 2000px) {
     .hero {
-      background-size: contain;
+      background-size: cover;
       background-position: calc(center - 30vw) bottom;
     }
   }
@@ -193,11 +204,35 @@ const {
 
   .hero__headline {
     color: var(--color-text-dark);
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3.5rem, 5vw, 5rem);
     font-weight: var(--font-weight-bold);
-    line-height: 1.1;
-    margin-bottom: var(--space-2xl);
-    max-width: 600px;
+    line-height: 1.2;
+    margin-bottom: var(--space-xl);
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero__headline-line {
+    white-space: nowrap;
+  }
+
+  .hero__headline-muted {
+    color: var(--color-text-light);
+  }
+
+  .hero__headline :global(.overflow-y-clip) {
+    overflow-y: visible;
+    display: inline-block;
+    vertical-align: baseline;
+    min-width: 5em;
+    padding-bottom: 0.1em;
+  }
+
+  .hero__headline :global(.hero__headline-accent) {
+    color: #41c1ba;
+    filter: saturate(0.8);
   }
 
   .hero__ctas {
@@ -215,6 +250,7 @@ const {
     line-height: 1.6;
     text-decoration: none;
     transition: all var(--transition-base);
+    white-space: nowrap;
   }
 
   .hero__cta--primary {
@@ -357,10 +393,11 @@ const {
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 1024px) {
     .hero {
-      background-position: center center;
-      background-size: cover;
+      background-image: url('/hero-bg-mob.webp');
+      background-position: top left;
+      background-size: auto;
     }
 
     .hero__bottom {
@@ -370,8 +407,8 @@ const {
       background: linear-gradient(
         to bottom,
         transparent 0%,
-        rgba(255, 255, 255, 0.3) 5%,
-        rgba(255, 255, 255, 0.7) 10%,
+        rgba(255, 255, 255, 1) 2.5%,
+        rgba(255, 255, 255, 1) 10%,
         white 15%,
         white 100%
       );

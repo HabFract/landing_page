@@ -1,0 +1,105 @@
+.product-tabs {
+  width: 100%;
+}
+
+.product-tabs__nav {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.product-tabs__button {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-heading);
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-base);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.product-tabs__button:hover {
+  color: var(--color-primary);
+}
+
+.product-tabs__button--active {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary);
+}
+
+.product-tabs__content {
+  animation: fadeIn var(--transition-base);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-tabs__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.product-tabs__feature {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+
+.product-tabs__feature-icon {
+  font-size: var(--font-size-2xl);
+  flex-shrink: 0;
+}
+
+.product-tabs__feature-content {
+  flex: 1;
+}
+
+.product-tabs__feature-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.product-tabs__feature-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .product-tabs__nav {
+    flex-direction: column;
+    gap: 0;
+    border-bottom: none;
+  }
+
+  .product-tabs__button {
+    text-align: left;
+    border-bottom: 1px solid var(--color-border-light);
+    border-left: 3px solid transparent;
+    margin-bottom: 0;
+    padding: var(--space-md);
+  }
+
+  .product-tabs__button--active {
+    border-bottom-color: var(--color-border-light);
+    border-left-color: var(--color-primary);
+  }
+}
