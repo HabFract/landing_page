@@ -75,7 +75,20 @@ export default function ProductTransition({ products }: ProductTransitionProps) 
           <div key={product.id} className="product-transition__features">
             {product.features.map((feature, idx) => (
               <div key={idx} className="product-transition__feature">
-                <span className="product-transition__feature-icon">{feature.icon}</span>
+                <span className="product-transition__feature-icon">
+                  {feature.icon.startsWith('/') ? (
+                    <img
+                      src={feature.icon}
+                      alt={feature.title}
+                      className={idx > 0 ? 'product-transition__feature-icon--scaled' : ''}
+                      style={{
+                        ...(feature.icon.includes('jigsaw') ? { paddingLeft: '1rem' } : {})
+                      }}
+                    />
+                  ) : (
+                    feature.icon
+                  )}
+                </span>
                 <div className="product-transition__feature-content">
                   <h3 className="product-transition__feature-title">{feature.title} →</h3>
                   <p className="product-transition__feature-description">{feature.description}</p>

@@ -24,8 +24,8 @@ interface ProductCard {
 }
 
 interface Props {
-  headline: string;
-  items: FeatureItem[];
+  headline?: string;
+  items?: FeatureItem[];
   integrations?: IntegrationLogos;
   products?: {
     headline: string;
@@ -39,20 +39,24 @@ const { headline, items, integrations, products } = Astro.props;
 <section class="features">
   <div class="container">
     <!-- Main Features Grid -->
-    <h2 class="features__headline">{headline}</h2>
-    <div class="features__grid">
-      {
-        items.map((item) => (
-          <div class="features__card">
-            <div class="features__image">
-              <img src={item.image} alt={item.title} />
-            </div>
-            <h3 class="features__title">{item.title}</h3>
-            <p class="features__description">{item.description}</p>
-          </div>
-        ))
-      }
-    </div>
+    {headline && items && (
+      <>
+        <h2 class="features__headline">{headline}</h2>
+        <div class="features__grid">
+          {
+            items.map((item) => (
+              <div class="features__card">
+                <div class="features__image">
+                  <img src={item.image} alt={item.title} />
+                </div>
+                <h3 class="features__title">{item.title}</h3>
+                <p class="features__description">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </>
+    )}
 
     <!-- Integrations Section -->
     {
@@ -87,16 +91,21 @@ const { headline, items, integrations, products } = Astro.props;
           <div class="products__grid">
             {products.items.map((product) => (
               <a href={product.ctaUrl} class="products__card">
-                <div
-                  class="products__icon"
-                  style={`background-color: ${product.iconColor}`}
-                >
-                  {product.icon}
+                <div class="products__card-top">
+                  <div class="products__icon">
+                    {product.icon.startsWith('/') ? (
+                      <img src={product.icon} alt={product.title} />
+                    ) : (
+                      product.icon
+                    )}
+                  </div>
                 </div>
-                <h3 class="products__title">
-                  {product.title} {product.ctaText}
-                </h3>
-                <p class="products__description">{product.description}</p>
+                <div class="products__card-bottom">
+                  <h3 class="products__title">
+                    {product.title} {product.ctaText}
+                  </h3>
+                  <p class="products__description">{product.description}</p>
+                </div>
               </a>
             ))}
           </div>
@@ -295,27 +304,46 @@ const { headline, items, integrations, products } = Astro.props;
   .products__card {
     background: #1a1a1a;
     border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
     text-decoration: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     transition: all var(--transition-base);
   }
 
   .products__card:hover {
-    background: #222;
     transform: translateY(-4px);
   }
 
-  .products__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
+  .products__card-top {
+    background: #f8f8f8;
+    padding: var(--space-2xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-xl);
-    color: white;
-    margin-bottom: var(--space-md);
+  }
+
+  .products__card-bottom {
+    background: #1a1a1a;
+    padding: var(--space-2xl);
+    flex: 1;
+  }
+
+  .products__card:hover .products__card-bottom {
+    background: #222;
+  }
+
+  .products__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .products__icon img {
+    max-width: 80px;
+    max-height: 80px;
+    width: auto;
+    height: auto;
   }
 
   .products__title {

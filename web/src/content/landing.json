@@ -9,7 +9,7 @@
         "url": "#products"
       },
       "secondary": {
-        "text": "Book a Call",
+        "text": "Consultation",
         "url": "#contact"
       }
     },
@@ -19,24 +19,24 @@
         "name": "Automate",
         "features": [
           {
-            "icon": "🎯",
-            "title": "Workflow Automation",
-            "description": "Automate repetitive tasks across marketing, sales, and operations with pre-built agent templates."
+            "icon": "/icons/jigsaw.webp",
+            "title": "Modular Workflow Automations",
+            "description": "Automate repetitive tasks across marketing, sales, and operations with pre-built, pre-tested workflows."
           },
           {
-            "icon": "🔄",
+            "icon": "/icons/target.webp",
+            "title": "Targeted Problem Solving",
+            "description": "Relieve pain-points incrementally - methodically streamline each of your existing workflows."
+          },
+          {
+            "icon": "/icons/calendar.webp",
+            "title": "Scheduled Deployment",
+            "description": "Launch automated workflows manually, or arrange them to suit your calendar. No coding required."
+          },
+          {
+            "icon": "/icons/compose.webp",
             "title": "Multi-Channel Orchestration",
-            "description": "Chain agents together to create end-to-end processes that span multiple tools and platforms."
-          },
-          {
-            "icon": "📱",
-            "title": "Mobile-First Control",
-            "description": "Monitor, approve, and manage all your automated workflows from anywhere via our mobile app."
-          },
-          {
-            "icon": "⚡",
-            "title": "Instant Deployment",
-            "description": "Launch automation workflows in minutes, not weeks. No coding required."
+            "description": "Compose agentic workflows together to create processes that span your whole suite of existing tools."
           }
         ]
       },
@@ -145,13 +145,13 @@
     }
   ],
   "testimonial": {
-    "logo": "Momentum Ventures",
-    "quote": "We used to think scaling operations meant scaling headcount. Habfract proved us wrong.",
-    "ctaText": "Book a Call",
+    "logo": "Aunt Jenny",
+    "quote": "Nick was able to help automate the order processing and responds well to feedback and requests for new features. He is a great problem solver and I would recommend him.",
+    "ctaText": "Consultation",
     "ctaUrl": "#contact",
-    "author": "Marcus Thorne",
-    "position": "CEO @Momentum Ventures",
-    "backgroundImage": "/gradient1.jpg"
+    "author": "Rewa Nolan",
+    "position": "Owner @Aunt Jenny",
+    "backgroundImage": "/meeting.webp"
   },
   "features": {
     "headline": "The Power of a Platform, The Simplicity of an App",
@@ -216,7 +216,7 @@
     "headline": "Build Your Autonomous Workforce, One Agent at a Time",
     "items": [
       {
-        "icon": "🎯",
+        "icon": "/icons/marketing.webp",
         "iconColor": "#14B8A6",
         "title": "Marketing & Sales Agents",
         "description": "Automate lead generation, social media management, email campaigns, and reporting.",
@@ -224,7 +224,7 @@
         "ctaUrl": "#marketing-agents"
       },
       {
-        "icon": "⚙️",
+        "icon": "/icons/admin.webp",
         "iconColor": "#3B82F6",
         "title": "Operations & Admin Agents",
         "description": "Handle inbox sorting, meeting scheduling, data entry, and internal reporting.",
@@ -232,7 +232,7 @@
         "ctaUrl": "#operations-agents"
       },
       {
-        "icon": "💡",
+        "icon": "/icons/creative.webp",
         "iconColor": "#8B5CF6",
         "title": "Creative & Content Agents",
         "description": "Repurpose content, generate ideas, draft copy, and manage distribution.",
@@ -240,7 +240,7 @@
         "ctaUrl": "#creative-agents"
       },
       {
-        "icon": "➕",
+        "icon": "/icons/custom.webp",
         "iconColor": "#F97316",
         "title": "Custom System Design",
         "description": "Work with our experts to build a bespoke, end-to-end system for your business.",
@@ -263,7 +263,7 @@
           "Community support"
         ],
         "cta": {
-          "text": "Get Started",
+          "text": "Consultation",
           "url": "#contact"
         },
         "highlighted": false
@@ -281,7 +281,7 @@
           "Advanced integrations"
         ],
         "cta": {
-          "text": "Get Started",
+          "text": "Consultation",
           "url": "#contact"
         },
         "highlighted": true
