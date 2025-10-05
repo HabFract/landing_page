@@ -159,6 +159,7 @@ const {
     border-bottom-left-radius: var(--radius-xl);
     border-bottom-right-radius: var(--radius-xl);
     padding: var(--space-xl);
+    margin-bottom: 8rem;
   }
 
   .hero__bottom-right {
@@ -398,6 +399,13 @@ const {
       background-image: url('/hero-bg-mob.webp');
       background-position: top left;
       background-size: auto;
+    }
+
+    .hero__bottom-left {
+      min-width: 0;
+      overflow-x: hidden;
+      overflow-y: visible;
+      margin-bottom: 0;
     }
 
     .hero__bottom {

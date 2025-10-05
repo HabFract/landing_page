@@ -69,20 +69,22 @@ export default function ContactForm({
     setStatus('loading');
 
     try {
-      // Simulated form submission - replace with actual API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const form = e.target as HTMLFormElement;
+      const formDataObj = new FormData(form);
 
-      // TODO: Replace with actual form submission endpoint
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData),
-      // });
-      //
-      // if (!response.ok) throw new Error('Failed to submit');
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataObj,
+      });
 
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Failed to submit');
+      }
     } catch (_error) {
       setStatus('error');
     }
@@ -98,6 +100,12 @@ export default function ContactForm({
 
   return (
     <form className="contact-form" onSubmit={handleSubmit} noValidate>
+      {/* Web3Forms Access Key */}
+      <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY} />
+
+      {/* Honeypot Spam Protection */}
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
       <div className="contact-form__field">
         <label htmlFor="name" className="contact-form__label">
           {nameLabel}
@@ -105,6 +113,7 @@ export default function ContactForm({
         <input
           type="text"
           id="name"
+          name="name"
           className={`contact-form__input ${errors.name ? 'contact-form__input--error' : ''}`}
           placeholder={namePlaceholder}
           value={formData.name}
@@ -127,6 +136,7 @@ export default function ContactForm({
         <input
           type="email"
           id="email"
+          name="email"
           className={`contact-form__input ${errors.email ? 'contact-form__input--error' : ''}`}
           placeholder={emailPlaceholder}
           value={formData.email}
@@ -148,6 +158,7 @@ export default function ContactForm({
         </label>
         <textarea
           id="message"
+          name="message"
           className={`contact-form__textarea ${errors.message ? 'contact-form__input--error' : ''}`}
           placeholder={messagePlaceholder}
           value={formData.message}

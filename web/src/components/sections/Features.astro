@@ -68,16 +68,22 @@ const { headline, items, integrations, products } = Astro.props;
           <div class="integrations__grid">
             {integrations.apps.map((app) => (
               <div class="integrations__card">
-                <div class="integrations__icon">{app.icon}</div>
+                <div class="integrations__icon" class:list={[app.name === 'Facebook' && 'integrations__icon--white-bg']}>
+                  {app.icon.startsWith('/') ? (
+                    <img src={app.icon} alt={app.name} />
+                  ) : (
+                    app.icon
+                  )}
+                </div>
                 <span class="integrations__name">{app.name}</span>
               </div>
             ))}
           </div>
 
           <div class="integrations__footer">
-            <a href={integrations.ctaUrl} class="integrations__cta">
+            <p class="integrations__cta">
               {integrations.ctaText}
-            </a>
+            </p>
           </div>
         </div>
       )
@@ -224,8 +230,9 @@ const { headline, items, integrations, products } = Astro.props;
   .integrations__card {
     background: white;
     border-radius: var(--radius-lg);
-    padding: var(--space-md);
+    padding: var(--space-lg);
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: var(--space-sm);
     transition: all var(--transition-base);
@@ -239,12 +246,28 @@ const { headline, items, integrations, products } = Astro.props;
   .integrations__icon {
     font-size: 1.5rem;
     flex-shrink: 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .integrations__icon img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  .integrations__icon--white-bg {
+    background: white;
+    border-radius: var(--radius-md);
   }
 
   .integrations__name {
     color: #1a1a1a;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
+    text-align: center;
   }
 
   .integrations__footer {
@@ -252,15 +275,10 @@ const { headline, items, integrations, products } = Astro.props;
   }
 
   .integrations__cta {
-    color: var(--color-primary);
-    font-size: var(--font-size-base);
+    color: #FF9955;
+    font-size: var(--font-size-xl);
     font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    transition: opacity var(--transition-fast);
-  }
-
-  .integrations__cta:hover {
-    opacity: 0.7;
+    margin: 0;
   }
 
   @media (max-width: 1024px) {

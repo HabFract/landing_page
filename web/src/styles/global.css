@@ -26,6 +26,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  overflow-x: clip;
+}
+
 /* Typography */
 h1,
 h2,

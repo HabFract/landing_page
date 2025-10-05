@@ -83,7 +83,13 @@ const { stats = [], cta, logo = 'Hyperline', columns = [], copyright, compliance
               <ul class="footer__column-links">
                 {column.links.map((link) => (
                   <li>
-                    <a href={link.url}>{link.text}</a>
+                    <a
+                      href={link.url}
+                      target={link.url.startsWith('http') ? '_blank' : undefined}
+                      rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    >
+                      {link.text}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -125,8 +131,10 @@ const { stats = [], cta, logo = 'Hyperline', columns = [], copyright, compliance
 
   .footer__stats-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-2xl);
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .footer__stat-card {

@@ -20,7 +20,7 @@
         "features": [
           {
             "icon": "/icons/jigsaw.webp",
-            "title": "Modular Workflow Automations",
+            "title": "Modular AI Automations",
             "description": "Automate repetitive tasks across marketing, sales, and operations with pre-built, pre-tested workflows."
           },
           {
@@ -31,7 +31,7 @@
           {
             "icon": "/icons/calendar.webp",
             "title": "Scheduled Deployment",
-            "description": "Launch automated workflows manually, or arrange them to suit your calendar. No coding required."
+            "description": "Launch workflows manually, or arrange them to suit your calendar. No coding required."
           },
           {
             "icon": "/icons/compose.webp",
@@ -43,54 +43,27 @@
       {
         "id": "plan",
         "name": "Plan",
-        "features": [
+        "layout": "two-column",
+        "cards": [
           {
-            "icon": "🗓️",
-            "title": "Strategic Planning",
-            "description": "AI-powered planning tools to map out your growth initiatives and operational roadmaps."
-          },
-          {
-            "icon": "📊",
-            "title": "Resource Optimization",
-            "description": "Intelligently allocate team resources and automation capacity for maximum efficiency."
-          },
-          {
-            "icon": "🎯",
-            "title": "Goal Tracking",
-            "description": "Set objectives and track progress with real-time insights from your automated systems."
-          },
-          {
-            "icon": "🔮",
-            "title": "Predictive Analytics",
-            "description": "Forecast outcomes and optimize workflows based on historical performance data."
+            "title": "Planitt App",
+            "description": "An innovative peer-to-peer behavioural planner that gives you back full data sovereignty.",
+            "cta": {
+              "text": "Learn More",
+              "url": "https://planitt.io"
+            },
+            "image": "/logos/planitt-logo.png"
           }
         ]
       },
       {
         "id": "learn",
         "name": "Learn",
-        "features": [
-          {
-            "icon": "📚",
-            "title": "Automation Academy",
-            "description": "Access courses, tutorials, and best practices for building effective AI-powered workflows."
-          },
-          {
-            "icon": "🎓",
-            "title": "Expert Workshops",
-            "description": "Live training sessions and workshops led by automation experts to level up your skills."
-          },
-          {
-            "icon": "💡",
-            "title": "Community Knowledge",
-            "description": "Learn from other users' workflows, templates, and success stories in our community."
-          },
-          {
-            "icon": "🤝",
-            "title": "1-on-1 Consulting",
-            "description": "Get personalized guidance from our team to design custom automation strategies for your business."
-          }
-        ]
+        "layout": "scrollable",
+        "blogLink": {
+          "text": "Read the AI Startup Labs Blog",
+          "url": "https://aistartuplabs.blog"
+        }
       }
     ],
     "screenshot": "",
@@ -114,7 +87,7 @@
     {
       "tag": "For Business Teams",
       "headline": "From Repetitive Tasks to Strategic Momentum",
-      "description": "Automate everything from lead research and social media content pipelines to customer onboarding sequences. Free your team to focus on high-impact work that drives growth, while habfract handles the operational load.",
+      "description": "Automate everything from lead research and social media content pipelines to customer onboarding sequences. Free your team to focus on high-impact work that drives growth, while Habfract handles the operational load.",
       "image": "/designs/section3-business.png",
       "testimonial": {
         "quote": "Habfract took over 20 hours of weekly manual work from my marketing team in the first month. We're now focused on strategy, not spreadsheets.",
@@ -132,7 +105,7 @@
     {
       "tag": "For Individuals & Creators",
       "headline": "Your Personal Operations Team, in Your Pocket",
-      "description": "Build systems to manage your personal brand, automate content repurposing across platforms, or even organize your research. The habfract app acts as your always-on assistant, turning your creative habits into a powerful engine for growth.",
+      "description": "Build systems to manage your personal brand, automate content repurposing across platforms, or even organize your research. The Habfract app acts as your always-on assistant, turning your creative habits into a powerful engine for growth.",
       "image": "/designs/section3-creator.png",
       "testimonial": {
         "quote": "As a solo creator, I was drowning in admin. Habfract now runs my content distribution and email newsletter. It's like having a team of three working for me 24/7.",
@@ -151,7 +124,9 @@
     "ctaUrl": "#contact",
     "author": "Rewa Nolan",
     "position": "Owner @Aunt Jenny",
-    "backgroundImage": "/meeting.webp"
+    "backgroundImage": "/meeting.webp",
+    "logoImage": "/icons/AuntJenny.webp",
+    "logoUrl": "https://www.auntjenny.com.au/"
   },
   "features": {
     "headline": "The Power of a Platform, The Simplicity of an App",
@@ -194,22 +169,21 @@
     "ctaText": "Connect Your Most Important Apps",
     "ctaUrl": "#integrations",
     "apps": [
-      { "icon": "💬", "name": "Slack" },
-      { "icon": "📝", "name": "Notion" },
-      { "icon": "📧", "name": "Gmail" },
-      { "icon": "📅", "name": "Google Calendar" },
-      { "icon": "☁️", "name": "Google Drive" },
-      { "icon": "📊", "name": "Google Sheets" },
-      { "icon": "📋", "name": "Trello" },
-      { "icon": "👥", "name": "Microsoft Teams" },
-      { "icon": "🛍️", "name": "Shopify" },
-      { "icon": "🧡", "name": "HubSpot" },
-      { "icon": "☁️", "name": "Salesforce" },
-      { "icon": "📆", "name": "Calendly" },
-      { "icon": "🎮", "name": "Discord" },
-      { "icon": "📺", "name": "YouTube" },
-      { "icon": "⭕", "name": "X" },
-      { "icon": "⭕", "name": "Facebook" }
+      { "icon": "/icons/Slack.webp", "name": "Slack" },
+      { "icon": "/icons/Notion.webp", "name": "Notion" },
+      { "icon": "/icons/Gmail.webp", "name": "Gmail" },
+      { "icon": "/icons/Calendar.webp", "name": "Google Calendar" },
+      { "icon": "/icons/Drive.webp", "name": "Google Drive" },
+      { "icon": "/icons/Sheets.webp", "name": "Google Sheets" },
+      { "icon": "/icons/Trello.webp", "name": "Trello" },
+      { "icon": "/icons/Teams.webp", "name": "Microsoft Teams" },
+      { "icon": "/icons/Shopify.webp", "name": "Shopify" },
+      { "icon": "/icons/Salesforce.webp", "name": "Salesforce" },
+      { "icon": "/icons/Calendly.webp", "name": "Calendly" },
+      { "icon": "/icons/Discord.webp", "name": "Discord" },
+      { "icon": "/icons/Youtube.webp", "name": "YouTube" },
+      { "icon": "/icons/X.webp", "name": "X" },
+      { "icon": "/icons/Facebook.webp", "name": "Facebook" }
     ]
   },
   "products": {
@@ -316,12 +290,8 @@
       "answer": "You can set specific checkpoints within any workflow where an agent must pause and wait for your approval via the mobile app. This ensures you have final say on critical actions, like sending an important email or publishing content."
     },
     {
-      "question": "Can I try habfract before committing?",
+      "question": "Can I try Habfract's services before committing?",
       "answer": "Yes. We offer a consultation to understand your needs and can set up a proof-of-concept workflow for qualified businesses to demonstrate the value before you subscribe to a plan."
-    },
-    {
-      "question": "What kind of support do you offer?",
-      "answer": "All plans come with access to our support resources. The Momentum plan includes priority email support, and the System plan provides you with a dedicated automation expert to help you build and maintain your workflows."
     },
     {
       "question": "Is my company's data secure?",
@@ -330,7 +300,7 @@
   ],
   "contact": {
     "headline": "Ready to Build Your Momentum?",
-    "subheadline": "Tell us about your goals, and we'll show you how habfract can build a system to achieve them.",
+    "subheadline": "Tell us about your goals, and we'll show you how Habfract can build a system to achieve them.",
     "form": {
       "nameLabel": "Full Name",
       "namePlaceholder": "John Doe",
@@ -354,77 +324,34 @@
         "label": "Increased Throughput",
         "value": "300%",
         "description": "average increase in task output"
-      },
-      {
-        "label": "Workflows Deployed",
-        "value": "10,000+",
-        "description": "intelligent workflows active"
       }
     ],
     "cta": {
       "headline": "Designed for scale, loved for control.",
-      "description": "The AI automation platform that keeps you in the driver's seat.",
+      "description": "AI automations that keep you in the driver's seat.",
       "buttonText": "Book a Free Consultation",
       "buttonUrl": "#contact",
       "disclaimer": "No commitment required."
     },
-    "logo": "habfract",
+    "logo": "Habfract Ltd.",
     "columns": [
       {
-        "title": "Solutions",
+        "title": "Navigate",
         "links": [
-          { "text": "Marketing Agents", "url": "#marketing-agents" },
-          { "text": "Operations Agents", "url": "#operations-agents" },
-          { "text": "Creative Agents", "url": "#creative-agents" },
-          { "text": "Custom Systems", "url": "#custom-systems" }
-        ]
-      },
-      {
-        "title": "Company",
-        "links": [
-          { "text": "About Us", "url": "#about" },
-          { "text": "Blog", "url": "#blog" },
-          { "text": "Careers", "url": "#careers" },
-          { "text": "Contact Us", "url": "#contact" }
-        ]
-      },
-      {
-        "title": "Platform",
-        "links": [
-          { "text": "Login", "url": "#login" },
-          { "text": "Explore Workflows", "url": "#products" },
-          { "text": "Book a Call", "url": "#contact" }
+          { "text": "Products", "url": "#products" },
+          { "text": "FAQ", "url": "#faq" },
+          { "text": "Contact", "url": "#contact" }
         ]
       },
       {
         "title": "Resources",
         "links": [
-          { "text": "Documentation", "url": "#docs" },
-          { "text": "Case Studies", "url": "#case-studies" },
-          { "text": "Security", "url": "#security" },
-          { "text": "API Status", "url": "#status" }
-        ]
-      },
-      {
-        "title": "Integrations",
-        "links": [
-          { "text": "Slack", "url": "#slack" },
-          { "text": "Salesforce", "url": "#salesforce" },
-          { "text": "Hubspot", "url": "#hubspot" },
-          { "text": "Notion", "url": "#notion" },
-          { "text": "Google Workspace", "url": "#gsuite" },
-          { "text": "All integrations", "url": "#integrations" }
-        ]
-      },
-      {
-        "title": "Legal",
-        "links": [
-          { "text": "Terms of Service", "url": "#terms" },
-          { "text": "Privacy Policy", "url": "#privacy" }
+          { "text": "AI Startup Labs Blog", "url": "https://aistartuplabs.blog" },
+          { "text": "YouTube Channel", "url": "https://www.youtube.com/channel/UCQgkI83Fwlh4ncl_4tK6dSg" }
         ]
       }
     ],
-    "copyright": "habfract © 2025 — All Rights Reserved.",
+    "copyright": "Habfract © 2025 — All Rights Reserved.",
     "compliance": "Enterprise-Grade Security & Privacy 🔒"
   }
 }

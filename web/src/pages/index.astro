@@ -8,14 +8,12 @@ import Hero from '../components/sections/Hero.astro';
 import Navigation from '../components/sections/Navigation.astro';
 import Pricing from '../components/sections/Pricing.astro';
 import Testimonial from '../components/sections/Testimonial.astro';
-import UseCases from '../components/sections/UseCases.astro';
 import landingData from '../content/landing.json';
 ---
 
 <BaseLayout title="Habfract - AI Automation Agency">
   <Navigation />
   <Hero {...landingData.hero} />
-  <UseCases cases={landingData.useCases} />
   <Testimonial {...landingData.testimonial} />
   <Features
     integrations={landingData.integrations}
