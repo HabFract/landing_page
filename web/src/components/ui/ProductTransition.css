@@ -38,9 +38,6 @@
 }
 
 .product-transition__content {
-  min-height: 500px;
-  max-height: 500px;
-  overflow-y: auto;
   overflow-x: hidden;
   position: relative;
 }
@@ -49,8 +46,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
-  height: 100%;
-  overflow-y: auto;
 }
 
 .product-transition__feature {
@@ -102,8 +97,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-xl);
-  height: 100%;
-  overflow-y: auto;
 }
 
 .product-transition__card {
@@ -167,9 +160,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
-  height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
   width: 100%;
 }
 
@@ -307,11 +298,6 @@
   .product-transition__button--active {
     border-bottom-color: var(--color-border-light);
     border-left-color: var(--color-primary);
-  }
-
-  .product-transition__content {
-    min-height: 400px;
-    max-height: 600px;
   }
 
   .product-transition__feature-icon img {
