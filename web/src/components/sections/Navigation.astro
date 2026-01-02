@@ -9,17 +9,8 @@
         <img src="/logos/3.png" alt="Logo" class="nav__logo-image" />
       </a>
 
-      <ul class="nav__menu">
-        <li class="nav__menu-item">
-          <a href="#products">Products</a>
-        </li>
-        <!-- <li class="nav__menu-item">
-          <a href="#pricing">Pricing</a>
-        </li> -->
-      </ul>
-
       <div class="nav__actions">
-        <a href="#contact" class="nav__link">Join Waitlist</a>
+        <a href="#products" class="nav__link">Workflows</a>
         <a href="#contact" class="nav__button">Consultation</a>
       </div>
     </div>
@@ -65,29 +56,9 @@
   }
 
   .nav__logo-image {
-    height: 48px;
-    width: auto;
-  }
-
-  .nav__menu {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xl);
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .nav__menu-item a {
-    color: var(--color-text);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-  }
-
-  .nav__menu-item a:hover {
-    color: var(--color-text-dark);
+    height: auto;
+    width: 100%;
+    max-width: 12rem;
   }
 
   .nav__actions {
@@ -130,15 +101,11 @@
   }
 
   @media (max-width: 640px) {
-    .nav__menu {
-      display: none;
-    }
-
     .nav__actions {
       gap: var(--space-md);
     }
 
-    .nav__link:first-child {
+    .nav__link {
       display: none;
     }
   }

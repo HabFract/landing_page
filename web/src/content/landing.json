@@ -46,6 +46,15 @@
         "layout": "two-column",
         "cards": [
           {
+            "title": "Agentiff.AI",
+            "description": "The mobile control centre for AI workflows.",
+            "cta": {
+              "text": "Learn More",
+              "url": "https://agentiff.ai"
+            },
+            "image": "/logos/agentiffai-logo.png"
+          },
+          {
             "title": "Planitt App",
             "description": "An innovative peer-to-peer behavioural planner that gives you back full data sovereignty.",
             "cta": {
@@ -346,6 +355,7 @@
       {
         "title": "Resources",
         "links": [
+          { "text": "Agentiff.AI", "url": "https://agentiff.ai" },
           { "text": "AI Startup Labs Blog", "url": "https://aistartuplabs.blog" },
           { "text": "YouTube Channel", "url": "https://www.youtube.com/channel/UCQgkI83Fwlh4ncl_4tK6dSg" }
         ]

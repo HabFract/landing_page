@@ -3,6 +3,7 @@
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: visible;
+  margin-top: var(--space-lg);
 }
 
 .product-transition__nav {
