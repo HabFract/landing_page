@@ -30,7 +30,7 @@ const {
     </div>
 
     <div class="contact__content">
-      <form class="contact-form" method="GET" action="https://app.reclaim.ai/m/nick-stebbings/flexible-quick-meeting">
+      <form class="contact-form" method="POST" action="/thank-you">
         <div class="contact-form__field">
           <label for="firstname" class="contact-form__label">
             {form.nameLabel}
@@ -56,6 +56,19 @@ const {
             class="contact-form__input"
             placeholder={form.emailPlaceholder}
             required
+          />
+        </div>
+
+        <div class="contact-form__field">
+          <label for="company" class="contact-form__label">
+            Company
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            class="contact-form__input"
+            placeholder="Your company name"
           />
         </div>
 

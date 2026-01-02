@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../components/layouts/BaseLayout.astro';
+import Navigation from '../components/sections/Navigation.astro';
+import Footer from '../components/sections/Footer.astro';
+import landingData from '../content/landing.json';
+---
+
+<BaseLayout title="Thank You - Habfract">
+  <Navigation />
+  <section class="thank-you">
+    <div class="container">
+      <div class="thank-you__content">
+        <h1 class="thank-you__headline">Thank You!</h1>
+        <p class="thank-you__message">Redirecting you to book your consultation...</p>
+        <a href="https://app.reclaim.ai/m/nick-stebbings/flexible-quick-meeting" class="thank-you__button">Click here if not redirected</a>
+      </div>
+    </div>
+  </section>
+  <Footer {...landingData.footer} />
+</BaseLayout>
+
+<script>
+  // Redirect after 2 seconds to allow HubSpot to capture data
+  setTimeout(() => {
+    window.location.href = 'https://app.reclaim.ai/m/nick-stebbings/flexible-quick-meeting';
+  }, 2000);
+</script>
+
+<style>
+  .thank-you {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4xl) 0;
+  }
+
+  .thank-you__content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .thank-you__headline {
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-lg);
+  }
+
+  .thank-you__message {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-2xl);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .thank-you__button {
+    display: inline-block;
+    background: var(--color-text-dark);
+    color: white;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+  }
+
+  .thank-you__button:hover {
+    background: var(--color-primary);
+    transform: translateY(-1px);
+  }
+</style>
