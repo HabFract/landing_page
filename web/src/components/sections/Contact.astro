@@ -30,64 +30,8 @@ const {
     </div>
 
     <div class="contact__content">
-      <form class="contact-form" method="GET" action="/thank-you">
-        <div class="contact-form__field">
-          <label for="firstname" class="contact-form__label">
-            {form.nameLabel}
-          </label>
-          <input
-            type="text"
-            id="firstname"
-            name="firstname"
-            class="contact-form__input"
-            placeholder={form.namePlaceholder}
-            required
-          />
-        </div>
-
-        <div class="contact-form__field">
-          <label for="email" class="contact-form__label">
-            {form.emailLabel}
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="contact-form__input"
-            placeholder={form.emailPlaceholder}
-            required
-          />
-        </div>
-
-        <div class="contact-form__field">
-          <label for="company" class="contact-form__label">
-            Company
-          </label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            class="contact-form__input"
-            placeholder="Your company name"
-          />
-        </div>
-
-        <div class="contact-form__field">
-          <label for="automation_interest" class="contact-form__label">
-            {form.messageLabel}
-          </label>
-          <textarea
-            id="automation_interest"
-            name="automation_interest"
-            class="contact-form__textarea"
-            placeholder={form.messagePlaceholder}
-            required
-            rows="5"
-          ></textarea>
-        </div>
-
-        <input type="submit" class="contact-form__submit" value={form.submitText} />
-      </form>
+      <div class="typeform-container" data-tf-live="01KE95YQWG3RMFQ6DS2ZFHJC7Y"></div>
+      <script is:inline src="//embed.typeform.com/next/embed.js"></script>
     </div>
   </div>
 </section>
@@ -119,72 +63,13 @@ const {
   }
 
   .contact__content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
   }
 
-  /* Contact Form Styles */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
-    background: white;
-    padding: var(--space-2xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-  }
-
-  .contact-form__field {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xs);
-  }
-
-  .contact-form__label {
-    color: var(--color-text-dark);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  .contact-form__input,
-  .contact-form__textarea {
+  .typeform-container {
+    min-height: 500px;
     width: 100%;
-    padding: var(--space-md);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-base);
-    font-family: inherit;
-    transition: border-color var(--transition-fast);
-  }
-
-  .contact-form__input:focus,
-  .contact-form__textarea:focus {
-    outline: none;
-    border-color: var(--color-text-dark);
-  }
-
-  .contact-form__textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-
-  .contact-form__submit {
-    background: var(--color-text-dark);
-    color: white;
-    padding: var(--space-md) var(--space-xl);
-    border: none;
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-semibold);
-    letter-spacing: 0.025em;
-    line-height: 1.6;
-    cursor: pointer;
-    transition: all var(--transition-base);
-  }
-
-  .contact-form__submit:hover {
-    background: var(--color-text);
-    transform: translateY(-1px);
   }
 
   @media (max-width: 768px) {
@@ -192,8 +77,8 @@ const {
       font-size: var(--font-size-2xl);
     }
 
-    .contact-form {
-      padding: var(--space-xl);
+    .typeform-container {
+      min-height: 600px;
     }
   }
 </style>
